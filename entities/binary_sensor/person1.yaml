@@ -1,0 +1,28 @@
+---
+#
+# Experimental sensor for home/away detection
+#
+
+- platform: bayesian
+  prior: 0.65
+  name: 'Bedar Thuis'
+  probability_threshold: 0.9
+  observations:
+    # Wifi
+    - entity_id: device_tracker.oneplus_7t_pro
+      prob_given_true: 0.7
+      prob_given_false: 0.3
+      platform: 'state'
+      to_state: 'home'
+    # Android Companion app
+    - entity_id: device_tracker.bedar_phone
+      prob_given_true: 0.9
+      prob_given_false: 0.1
+      platform: 'state'
+      to_state: 'home'
+    # Phone wifi connection
+    - entity_id: sensor.oneplus_wifi_connection
+      prob_given_true: 0.8
+      prob_given_false: 0.1
+      platform: 'state'
+      to_state: 'Bedar'
