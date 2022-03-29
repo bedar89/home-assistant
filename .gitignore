@@ -1,0 +1,46 @@
+# Generic ignores
+*.log
+*.log.*
+*.db
+*.db-shm
+*.db-wal
+*.pyc
+._*
+__pycache__
+
+# Directory (contents) ignores
+.cloud
+.storage
+.ssh
+deps
+
+# Specific file ignores
+core
+image
+ip_bans.yaml
+secrets.yaml
+harmony_*.conf
+
+# Build-in blueprints ignores
+blueprints/*/homeassistant
+
+# Ignore add-on files
+notebooks
+nest
+zigbee2mqtt
+
+# Ignore files created by IDE's
+.vscode
+.theia
+.Trash*
+
+# Ignore vendored stuff
+custom_components
+themes
+www/community
+
+# Specific keeps
+!.gitkeep
+
+# Temporary ignores
+.old_config

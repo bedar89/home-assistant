@@ -1,0 +1,2 @@
+entity: sensor.bathroom_motion_temperature
+type: custom:mushroom-entity-card
