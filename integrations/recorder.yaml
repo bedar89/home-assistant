@@ -14,3 +14,19 @@ recorder:
 
   # Disable auto purging, I'm doing this using automations instead
   auto_purge: false
+  exclude:
+    entities:
+      - sensor.time
+      - sensor.ha_uptime
+
+    domains:
+      - updater
+      - automation
+      - group
+      - scene
+      - script
+      - weblink
+      - calendar
+      - media_player
+      - sun
+      - camera
