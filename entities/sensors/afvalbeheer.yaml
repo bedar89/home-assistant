@@ -1,18 +1,18 @@
-  - platform: afvalbeheer
-    wastecollector: RecycleApp
-    resources:
-      - restafval
-      - gft
-      - papier
-      - pmd
-    postcode: !secret home_postcode
-    streetnumber: !secret home_number
-    streetname: !secret home_street
-    upcomingsensor: 1
-    dateformat: '%d-%m-%Y'
-    dateonly: 0
-    dateobject: 0
-    nameprefix: 1
-    builtinicons: 1
-    disableicons: 0
-    dutch: 1
+- platform: afvalbeheer
+  wastecollector: RecycleApp
+  resources:
+    - restafval
+    - gft
+    - papier
+    - pmd
+  postcode: !secret zone_home_postcode
+  streetnumber: !secret zone_home_number
+  streetname: !secret zone_home_street
+  upcomingsensor: 1
+  dateformat: '%d-%m-%Y'
+  dateonly: 0
+  dateobject: 0
+  nameprefix: 1
+  builtinicons: 1
+  disableicons: 0
+  dutch: 1

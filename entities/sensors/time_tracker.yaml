@@ -62,5 +62,5 @@
   state: Work
   type: time
   start: >
-    {{ states("sensor.timestamp_start_of_today")|float - now().weekday() * 86400 }}
+    {{ states("sensor.timestamp_start_of_today")|float(0) - now().weekday() * 86400 }}
   end: "{{ now() }}"
