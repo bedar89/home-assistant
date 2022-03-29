@@ -1,0 +1,66 @@
+# Media
+- platform: history_stats
+  name: Hours TV has been on last 7 days
+  entity_id: media_player.tv
+  state: "on"
+  type: time
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: Times TV has been on last 7 days
+  entity_id: media_player.tv
+  state: "on"
+  type: count
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+
+# Lights
+- platform: history_stats
+  name: Hours livingroom lights have been on last 7 days
+  entity_id: light.livingroom_lights
+  state: "on"
+  type: time
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: Hours hallway lights have been on last 7 days
+  entity_id: light.hallway_lights
+  state: "on"
+  type: time
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: Hours dining lights have been on last 7 days
+  entity_id: light.dining_lights
+  state: "on"
+  type: time
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: Hours bathroom lights have been on last 7 days
+  entity_id: light.bathroom_lights
+  state: "on"
+  type: time
+  duration:
+    days: 7
+  end: "{{ now() }}"
+
+# Person
+- platform: history_stats
+  name: Time at work this week
+  entity_id: person.bedar
+  state: Work
+  type: time
+  start: >
+    {{ states("sensor.timestamp_start_of_today")|float - now().weekday() * 86400 }}
+  end: "{{ now() }}"
