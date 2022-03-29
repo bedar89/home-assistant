@@ -1,0 +1,39 @@
+---
+#-
+#            _             _   _               _ _       _     _   _
+#   __ _  __| | __ _ _ __ | |_(_)_   _____    | (_) __ _| |__ | |_(_)_ __   __ _
+#  / _` |/ _` |/ _` | '_ \| __| \ \ / / _ \   | | |/ _` | '_ \| __| | '_ \ / _` |
+# | (_| | (_| | (_| | |_) | |_| |\ V /  __/   | | | (_| | | | | |_| | | | | (_| |
+#  \__,_|\__,_|\__,_| .__/ \__|_| \_/ \___|___|_|_|\__, |_| |_|\__|_|_| |_|\__, |
+#                   |_|                  |_____|   |___/                   |___/
+#
+#- from github.com/basnijholt/home-assistant-config
+adaptive_lighting:
+  - name: living room
+    lights:
+      - light.livingroom_lights
+    min_brightness: 70
+    prefer_rgb_color: false
+    detect_non_ha_changes: true
+    interval: 30
+
+  - name: default
+    lights:
+      - light.livingroom_lights
+      - light.hallway_lights
+      - light.kitchen_lights
+      - light.bathroom_lights
+      - light.dining_lights
+    min_brightness: 70
+    prefer_rgb_color: false
+    detect_non_ha_changes: true
+    interval: 30
+
+  - name: default bed
+    lights:
+      - light.bedroom_lights
+    sleep_brightness: 20
+    min_brightness: 70
+    prefer_rgb_color: false
+    detect_non_ha_changes: true
+    interval: 30
