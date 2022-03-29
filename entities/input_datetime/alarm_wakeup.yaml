@@ -2,7 +2,6 @@
 # https://www.home-assistant.io/integrations/input_datetime/
 #
 
-alarm_wakeup:
-  name: Tijd opstaan
-  has_date: false
-  has_time: true
+name: Tijd opstaan
+has_date: false
+has_time: true
