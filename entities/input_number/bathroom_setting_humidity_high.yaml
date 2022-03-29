@@ -6,7 +6,7 @@
 #
 name: "Bathroom Setting Humidity High"
 icon: "mdi:water-percent-alert"
-unit_of_measurement: "%"
+# unit_of_measurement: "%"
 min: 0
 max: 100
 step: 1
