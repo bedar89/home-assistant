@@ -1,0 +1,29 @@
+alias: "Notificatie: Deurbel audio"
+id: doorbell_audio
+initial_state: true
+trigger:
+  - platform: state
+    entity_id: binary_sensor.voordeur_doorbell
+    from: "off"
+    to: "on"
+action:
+  # - service: script.sonos_play
+  #   data:
+  #     sonos_entity:
+  #       - media_player.eetkamer
+  #       - media_player.boven
+  #       - media_player.zolder
+  #       - media_player.tuin
+  #     volume: 0.4
+  #     media_content: !secret http_audio_deurbel
+  #     delay: '00:00:03'
+  - service: media_player.play_media
+    data:
+      entity_id:
+        - media_player.keuken_speaker
+        - media_player.slaapkamer_display
+        - media_player.woonkamer_speaker
+      media_content_id: !secret http_audio_deurbel
+      media_content_type: music
+      extra:
+        volume: 20

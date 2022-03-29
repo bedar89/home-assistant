@@ -1,0 +1,10 @@
+alias: "Startup Notification"
+trigger:
+  platform: event
+  event_type: homeassistant_start
+action:
+  service: notify.pushover
+  data:
+    title: "Warning"
+    message: "Hass restarted"
+    target: ""
