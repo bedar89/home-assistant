@@ -1,6 +1,9 @@
 ---
 
 # Customize light entities
+light.hallway_lights:
+  icon: mdi:lightbulb-group
+
 light.livingroom_lights:
   icon: mdi:lightbulb-group
 
