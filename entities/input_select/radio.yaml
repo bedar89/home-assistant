@@ -1,0 +1,30 @@
+---
+# Select a radio station
+radio_station:
+  name: 'Select Radio Station'
+  options: 
+    - 'Studio Brussel'
+    - 'Nostalgie Vlaanderen'
+    - 'Nostalgie Extra'
+    - 'Nostalgie Extra 90'
+    - 'Nostalgie Extra NL'
+    - 'Nostalgie Extra 80'
+    - 'Nostalgie Extra New Wave'
+    - 'MNM'
+    - 'MNM Hits'
+    - 'MNM R&B Beats'
+    - 'MNM 90 en Nillies'
+    - 'Studio Brussel - De Tijdloze'
+    - 'Studio Brussel - #ikluisterbelgisch'
+  initial: MNM
+  icon: mdi:radio
+
+radio_speaker:
+  name: 'Select Speaker'
+  options:
+    - media_player.google_home
+    - media_player.google_home_hub
+    - media_player.home_mini_master_bedroom
+    - media_player.home_mini_kai
+    - media_player.sonos
+  icon: mdi:speaker-wireless

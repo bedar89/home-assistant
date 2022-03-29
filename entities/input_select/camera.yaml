@@ -1,0 +1,6 @@
+camera:
+  name: 'Select Camera'
+  options:
+    - camera.nest_cam
+    - camera.nest_iq_cam
+  icon: hass:cctv
