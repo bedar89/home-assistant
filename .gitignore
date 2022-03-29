@@ -38,7 +38,7 @@ zigbee2mqtt
 custom_components
 themes
 www/community
-www/images/people
+www/images/people/*.jpeg
 
 # Specific keeps
 !.gitkeep
