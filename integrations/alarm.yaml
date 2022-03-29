@@ -1,5 +1,6 @@
 alarm_control_panel:
   - platform: manual
+    name: house
     code: !secret alarm_code
     delay_time: 30
     arming_time: 30
