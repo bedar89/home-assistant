@@ -9,7 +9,7 @@
 #
 #- from github.com/basnijholt/home-assistant-config
 adaptive_lighting:
-  - name: living room
+  - name: "living room"
     lights:
       - light.livingroom_lights
     min_brightness: 70
@@ -17,7 +17,7 @@ adaptive_lighting:
     detect_non_ha_changes: true
     interval: 30
 
-  - name: default
+    name: "default"
     lights:
       - light.livingroom_lights
       - light.hallway_lights
@@ -29,7 +29,7 @@ adaptive_lighting:
     detect_non_ha_changes: true
     interval: 30
 
-  - name: default bed
+  - name: "default bed"
     lights:
       - light.bedroom_lights
     sleep_brightness: 20
