@@ -41,9 +41,7 @@ tts
 .Trash*
 
 # Ignore vendored stuff
-custom_components
 themes
-www/community
 www/images/people/*.jpeg
 
 # Specific keeps
