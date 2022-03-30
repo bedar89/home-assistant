@@ -27,7 +27,6 @@
           Er is een Home Assistant update beschikbaar.
           Versie: {{ states('sensor.version_available') }} .
 
-
           LET OP: ER ZIJN {{ states('sensor.potential_breaking_changes') }} BREAKING CHANGES.
           {% endif %}
         data:

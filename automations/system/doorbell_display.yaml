@@ -32,9 +32,6 @@ action:
           - condition: state
             entity_id: group.device_status
             state: "home"
-          # - condition: state
-          #   entity_id: binary_sensor.frontdoor
-          #   state: "off"
         sequence:
           - service: unifiprotect.set_doorbell_message
             data:
