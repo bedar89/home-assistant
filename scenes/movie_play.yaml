@@ -3,26 +3,26 @@
   icon: mdi:movie
   entities:
     light.livingroom_light_1:
-      state: off
+      state: "off"
     light.livingroom_light_2:
-      state: off
+      state: "off"
     light.livingroom_light_3:
-      state: off
+      state: "off"
     light.dining_light_1:
-      state: off
+      state: "off"
     light.dining_light_2:
-      state: off
+      state: "off"
     light.dining_light_3:
-      state: off
+      state: "off"
     light.dining_light_4:
-      state: off
+      state: "off"
     light.kitchen_light_1:
-      state: off
+      state: "off"
     light.kitchen_light_2:
-      state: off
+      state: "off"
     light.kitchen_light_3:
-      state: off
+      state: "off"
     light.kitchen_light_4:
-      state: off
+      state: "off"
     light.computer_light_strip:
-      state: off
+      state: "off"

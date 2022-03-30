@@ -1,3 +1,5 @@
+---
+
 alias: "Startup Notification"
 trigger:
   platform: event

@@ -3,14 +3,14 @@
   icon: mdi:movie
   entities:
     light.livingroom_light_1:
-      state: on
+      state: "on"
       brightness: 51
     light.dining_light_4:
-      state: on
+      state: "on"
       brightness: 51
     light.kitchen_light_1:
-      state: on
+      state: "on"
       brightness: 51
     light.kitchen_light_4:
-      state: on
+      state: "on"
       brightness: 51
