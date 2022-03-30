@@ -1,7 +1,7 @@
 ---
 - id: '9020727474147'
   alias: Bathroom - Humidity Alert
-  initial_state: on
+  initial_state: true
 
   trigger:
     - platform: numeric_state
@@ -23,7 +23,7 @@
         entity_id: media_player.bathroom_speaker
         message: "Het is te vochtig in de badkamer. Zet de deur open indien mogelijk!"
         language: "nl"
-        
+
     - service: notify.pushover
       data:
         title: "Bathroom"
