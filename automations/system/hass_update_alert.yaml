@@ -6,38 +6,36 @@
   id: system.hass_update_alert
   trigger:
     platform: state
-    entity_id: sensor.version_available
+    entity_id: sensor.home_assistant_versions
   condition:
     - condition: template
       value_template: >-
         {{
-          states('sensor.version_available')
+          states('sensor.home_assistant_versions')
           !=
-          states('sensor.version_current')
+          states('sensor.current_version')
         }}
   action:
     - service: notify.pushover
-      data_template:
+      data:
         title: "🚧 Home Assistant update"
         message: >-
           {% if is_state('sensor.potential_breaking_changes', '0') %}
           Er is een Home Assistant update beschikbaar.
-          Versie: {{ states('sensor.version_available') }} .
+          Versie: {{ states('sensor.home_assistant_versions') }} .
           {% else %}
           Er is een Home Assistant update beschikbaar.
-          Versie: {{ states('sensor.version_available') }} .
+          Versie: {{ states('sensor.home_assistant_versions') }} .
 
           LET OP: ER ZIJN {{ states('sensor.potential_breaking_changes') }} BREAKING CHANGES.
           {% endif %}
         data:
-          url: /hassio
-          attachment:
-            content-type: png
-            url: https://cdn1.iconfinder.com/data/icons/basic-ui-elements-color/700/012_refresh-512.png
+          url: "https://ha.bedar.be"
+          attachment: "https://cdn1.iconfinder.com/data/icons/basic-ui-elements-color/700/012_refresh-512.png"
     - service: persistent_notification.create
       data_template:
         title: "🚧 Home Assistant update"
         message: >-
           Er is een Home Assistant update voor Hass.io beschikbaar!
-          Versie: {{ states('sensor.version_available') }} .
+          Versie: {{ states('sensor.home_assistant_versions') }} .
         notification_id: hassio_upgrade

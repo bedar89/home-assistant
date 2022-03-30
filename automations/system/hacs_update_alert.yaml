@@ -11,15 +11,9 @@
       value_template: "{{ (states(trigger.entity_id) | float) != 0}}"
   action:
     - service: notify.pushover
-      data_template:
+      data:
         title: "🚧 HACS update"
-        message: >-
-          {% for repo in state_attr(trigger.entity_id, 'repositories') %}
-          - {{ repo.display_name }} ({{ repo["available_version"] }})
-
-          {% endfor %}
+        message: "There are {{ states('sensor.hacs') }} new update(s) available in HACS."
         data:
-          url: /hacs
-          attachment:
-            content-type: png
-            url: https://cdn1.iconfinder.com/data/icons/basic-ui-elements-color/700/012_refresh-512.png
+          url: "https://ha.bedar.be/hacs"
+          attachment: "https://cdn1.iconfinder.com/data/icons/basic-ui-elements-color/700/012_refresh-512.png"

@@ -1,0 +1,7 @@
+---
+family:
+  name: Family
+  entities:
+    - person.bedar
+    - person.sunshine
+    - person.tjardo
