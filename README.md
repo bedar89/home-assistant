@@ -1,6 +1,4 @@
-
-
-[![Home Assistant CI](https://github.com/bedar89/home-assistant/actions/workflows/homeassisant.yml/badge.svg)](https://github.com/bedar89/home-assistant/actions/workflows/homeassisant.yml)
+# My Home Assistant Configuration
 
 ## Status Information
 
@@ -33,7 +31,6 @@ Below is a list of all hardware in-house
 
 ---
 
-
 ## Links
 
 - [Home Assistant Homepage](https://home-assistant.io/)
@@ -44,30 +41,6 @@ Below is a list of all hardware in-house
 - [Official Home Assistant Demo](https://home-assistant.io/demo/)
 - [Klaas Schoute](https://github.com/klaasnicolaas/Student-homeassistant-config): This readme is greatly inspired by him
 - [Frenck](https://github.com/frenck/home-assistant-config): His config started it all!
-
-## License
-
-MIT License
-
-Copyright (c) 2019-2022 Klaas Schoute
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
 
 <!-- Shield -->
 [commits-shield]: https://img.shields.io/github/commit-activity/y/bedar89/home-assistant?style=for-the-badge
@@ -87,7 +60,7 @@ SOFTWARE.
 [issues]: https://github.com/klaasnicolaas/Student-homeassistant-config/issues
 [smarthome]: https://github.com/klaasnicolaas/Smarthome-homeassistant-config
 [techlife]: https://student-techlife.com/
-[ha-os]: https://github.com/whiskerz007/proxmox_hassos_install
+[ha-os]: https://www.home-assistant.io/installation/#compare-installation-methods
 [rpi4]: https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc6cayh.html
 [slaesh]: https://slae.sh/projects/cc2652/
 
