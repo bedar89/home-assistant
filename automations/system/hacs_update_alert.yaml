@@ -29,5 +29,4 @@ action:
   #     message: >-
   #       {% for repo in state_attr(trigger.entity_id, 'repositories') %}
   #       - {{ repo.display_name }} ({{ repo["available_version"] }})
-        
   #       {% endfor %}

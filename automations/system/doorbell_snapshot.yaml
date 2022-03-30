@@ -7,10 +7,6 @@ trigger:
     entity_id: binary_sensor.voordeur_doorbell
     from: "off"
     to: "on"
-# condition:
-# ### dit voorkomt het klapperen
-#   condition: template
-#   value_template: '{{ (as_timestamp(now()) - as_timestamp(states.automation.notificatie_deurbel_snapshot.attributes.last_triggered | default(0)) | int > 10)}}'
 action:
   - service: camera.snapshot
     data:

@@ -8,13 +8,17 @@ trigger:
     to: person
     attribute: event_object
   - platform: template
-    value_template: "{{ as_timestamp(now()) - as_timestamp(state_attr('binary_sensor.frontdoor_motion', 'last_tripped_time')) < 10 }}"
+    value_template: >
+      "{{ as_timestamp(now()) -
+      as_timestamp(state_attr('binary_sensor.frontdoor_motion', 'last_tripped_time')) < 10 }}"
   - platform: state
     entity_id: binary_sensor.frontdoor_doorbell
     from: "off"
     to: "on"
   - platform: template
-    value_template: "{{ as_timestamp(now()) - as_timestamp(state_attr('binary_sensor.frontdoor_doorbell', 'last_tripped_time')) < 10 }}"
+    value_template: >
+      "{{ as_timestamp(now()) -
+      as_timestamp(state_attr('binary_sensor.frontdoor_doorbell', 'last_tripped_time')) < 10 }}"
 action:
   - choose:
       - conditions:
@@ -22,7 +26,9 @@ action:
             entity_id: binary_sensor.frontdoor_doorbell
             state: "on"
           - condition: template
-            value_template: "{{ as_timestamp(now()) - as_timestamp(state_attr('binary_sensor.frontdoor_doorbell', 'last_tripped_time')) < 10 }}"
+            value_template: >
+              "{{ as_timestamp(now()) -
+              as_timestamp(state_attr('binary_sensor.frontdoor_doorbell', 'last_tripped_time')) < 10 }}"
           - condition: state
             entity_id: group.device_status
             state: "home"
