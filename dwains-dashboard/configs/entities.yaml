@@ -32,6 +32,7 @@ light.bathroom_lights:
   custom_card: true
 light.dining_lights:
   custom_card: true
+  sort_order: 1
 light.hallway_lights:
   custom_card: true
 light.kitchen_lights:
@@ -40,6 +41,8 @@ light.led_light_strip:
   custom_card: true
 light.livingroom_lights:
   custom_card: true
+light.mufasa_cam_indicator_light:
+  disabled: true
 light.tjardo_slaapkamer:
   custom_card: true
 media_player.backyard_speaker:
@@ -84,6 +87,14 @@ select.frontdoor_recording_mode:
   disabled: true
 select.harmony_hub_activities:
   hidden: true
+select.mufasa_cam_motion_detection_sensitivity:
+  disabled: true
+select.mufasa_cam_night_vision:
+  disabled: true
+select.mufasa_cam_record_mode:
+  disabled: true
+select.mufasa_cam_sound_detection_sensitivity:
+  disabled: true
 sensor.bathroom_motion_battery:
   hidden: true
 sensor.bathroom_motion_illuminance_lux:
@@ -102,6 +113,12 @@ sensor.broadlink_rm4c_pro_tx:
   disabled: true
 sensor.broadlink_rm4c_pro_uptime:
   disabled: true
+sensor.canon_mg3600_series:
+  hidden: true
+sensor.canon_mg3600_series_black:
+  hidden: true
+sensor.canon_mg3600_series_color:
+  hidden: true
 sensor.computer_control_action:
   disabled: true
 sensor.computer_control_battery:
@@ -155,4 +172,14 @@ switch.frontdoor_privacy_mode:
 switch.frontdoor_status_light_on:
   disabled: true
 switch.frontdoor_system_sounds:
+  disabled: true
+switch.mufasa_cam_flip:
+  disabled: true
+switch.mufasa_cam_motion_alarm:
+  disabled: true
+switch.mufasa_cam_sound_detection:
+  disabled: true
+switch.mufasa_cam_time_watermark:
+  disabled: true
+switch.mufasa_cam_video_recording:
   disabled: true

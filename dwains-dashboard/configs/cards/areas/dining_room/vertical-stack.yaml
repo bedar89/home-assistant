@@ -1,0 +1,49 @@
+cards:
+- elements:
+  - conditions:
+    - entity: sensor.canon_mg3600_series
+      state_not: unavailable
+    elements:
+    - entity: sensor.canon_mg3600_series
+      style:
+        left: 89%
+        top: 34%
+      type: state-badge
+    type: conditional
+  image: /local/images/devices/canon.jpg
+  type: picture-elements
+- card:
+    direction: up
+    entities:
+    - color: Black
+      entity: sensor.canon_mg3600_series_black
+      name: Black CF411x
+    - color: MediumOrchid
+      entity: sensor.canon_mg3600_series_color
+      name: Color CF413a
+    height: 150px
+    max: 100
+    min: 0
+    padding: 2px
+    positions:
+      icon: inside
+      title: outside
+    stack: horizontal
+    style: "bar-card-title {\n  text-shadow: 1px 1px 5px black;\n}\nbar-card-value\
+      \ {\n  text-shadow: 1px 1px 5px black;\n} "
+    target: '5'
+    title: Canon MG3600
+    type: custom:bar-card
+    unit_of_measurement: '%'
+  conditions:
+  - entity: sensor.canon_mg3600_series
+    state_not: unavailable
+  type: conditional
+col_span: '2'
+col_span_lg: '1'
+col_span_xl: '1'
+position: top
+row_span: '1'
+row_span_lg: '1'
+row_span_xl: '1'
+type: vertical-stack
