@@ -1,3 +1,4 @@
+---
 - name: "[Movie Mode] Pause (yaml)"
   icon: mdi:movie
   entities:

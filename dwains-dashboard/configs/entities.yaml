@@ -1,3 +1,4 @@
+---
 binary_sensor.bathroom_motion_occupancy:
   custom_card: true
 binary_sensor.bedroom_control_update_available:

@@ -1,3 +1,4 @@
+---
 - name: "[Movie Mode] Play (yaml)"
   icon: mdi:movie
   entities:

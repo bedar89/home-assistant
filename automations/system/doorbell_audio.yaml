@@ -1,3 +1,4 @@
+---
 alias: "Notificatie: Deurbel audio"
 id: doorbell_audio
 initial_state: true
