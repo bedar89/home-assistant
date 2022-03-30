@@ -8,6 +8,8 @@
 ._*
 __pycache__
 *.token
+*.conf
+*.HA_VERSION
 
 # Directory (contents) ignores
 .cloud
@@ -22,6 +24,8 @@ ip_bans.yaml
 secrets.yaml
 harmony_*.conf
 google_calendars.yaml
+known_devices.yaml
+alarm.yaml
 
 # Build-in blueprints ignores
 blueprints/*/homeassistant
@@ -30,10 +34,10 @@ blueprints/*/homeassistant
 notebooks
 nest
 zigbee2mqtt
+tts
 
 # Ignore files created by IDE's
 .vscode
-.theia
 .Trash*
 
 # Ignore vendored stuff
@@ -44,6 +48,7 @@ www/images/people/*.jpeg
 
 # Specific keeps
 !.gitkeep
+!*.md
 
 # Temporary ignores
 .old_config
