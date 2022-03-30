@@ -1,3 +1,4 @@
+---
 - platform: afvalbeheer
   wastecollector: RecycleApp
   resources:

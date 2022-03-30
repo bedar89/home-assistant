@@ -1,3 +1,4 @@
+---
 # Media
 - platform: history_stats
   name: Hours TV has been on last 7 days
@@ -16,7 +17,6 @@
   duration:
     days: 7
   end: "{{ now() }}"
-
 
 # Lights
 - platform: history_stats

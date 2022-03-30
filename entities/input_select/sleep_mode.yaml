@@ -1,3 +1,4 @@
+---
 sleep_mode:
   options:
     - total # everyone is sleeping
