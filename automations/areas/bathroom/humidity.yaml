@@ -15,7 +15,7 @@
     conditions:
       - condition: state
         entity_id: binary_sensor.bathroom_motion_occupancy
-        state: 'on'
+        state: 'true'
 
   action:
     - service: tts.google_say
@@ -23,6 +23,7 @@
         entity_id: media_player.bathroom_speaker
         message: "Het is te vochtig in de badkamer. Zet de deur open indien mogelijk!"
         language: "nl"
+        
     - service: notify.pushover
       data:
         title: "Bathroom"

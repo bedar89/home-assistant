@@ -4,7 +4,7 @@ id: '6020975345972'
 # Sync devices to Google Assistant
 #
 alias: System - Google Assistant Device Syncs
-initial_state: on
+initial_state: true
 trigger:
   - platform: homeassistant
     event: start
