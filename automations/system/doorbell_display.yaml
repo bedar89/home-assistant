@@ -47,7 +47,6 @@
               data:
                 entity_id: select.frontdoor_doorbell_text
                 message: "GOEDEMORGEN"
-        #                duration: 5
         - conditions:
             - condition: time
               after: "12:00:00"
