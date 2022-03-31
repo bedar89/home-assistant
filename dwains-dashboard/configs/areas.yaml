@@ -1,65 +1,72 @@
----
 basement:
   floor: Basement
   icon: mdi:spider-web
   sort_order: 14
 bathroom:
-  floor: Ground floor
+  floor: Ground
   icon: mdi:bathtub
   sort_order: 7
 bedroom:
   floor: First floor
   icon: mdi:bed-king
-  sort_order: 5
+  sort_order: 8
 blue_room:
   floor: Second floor
   icon: mdi:bed-empty
-  sort_order: 13
+  sort_order: 10
 computer:
-  floor: Ground floor
+  floor: Ground
   icon: mdi:laptop
-  sort_order: 8
+  sort_order: 18
 dining_room:
-  floor: Groundfloor
+  floor: Ground
   icon: mdi:table-chair
-  sort_order: 2
-front:
-  floor: Groundfloor
-  icon: mdi:door
   sort_order: 3
+front:
+  floor: Ground
+  icon: mdi:door
+  sort_order: 6
 garage:
-  floor: Groundfloor
+  floor: Ground
   icon: mdi:garage
-  sort_order: 12
+  sort_order: 15
 garden:
-  floor: Groundfloor
+  floor: Ground
   icon: mdi:grass
-  sort_order: 11
+  sort_order: 12
 hallway:
-  floor: Groundfloor
+  floor: Ground
   icon: mdi:shoe-sneaker
-  sort_order: 9
+  sort_order: 5
 kitchen:
-  floor: Groundfloor
+  floor: Ground
   icon: mdi:fridge-outline
   sort_order: 4
 living_room:
-  floor: Groundfloor
+  floor: Ground
   icon: mdi:sofa
-  sort_order: 1
+  sort_order: 2
 roof:
   floor: Roof
   icon: mdi:home-roof
   sort_order: 16
 server_rack:
-  floor: Groundfloor
+  floor: Ground
   icon: mdi:server
-  sort_order: 15
+  sort_order: 17
+system:
+  floor: ''
+  icon: mdi:application-brackets
+  sort_order: 1
 tjardo_bedroom:
   floor: First floor
   icon: mdi:human-child
-  sort_order: 6
+  sort_order: 9
 washing_room:
-  floor: Groundfloor
+  floor: Ground
   icon: mdi:washing-machine
-  sort_order: 10
+  sort_order: 13
+white_room:
+  floor: Second floor
+  icon: mdi:bed-empty
+  sort_order: 11
