@@ -1,0 +1,6 @@
+---
+- name: Tjardo school
+  latitude: !secret zone_tjardoschool_latitude
+  longitude: !secret zone_tjardoschool_longitude
+  radius: 50
+  icon: mdi:school
