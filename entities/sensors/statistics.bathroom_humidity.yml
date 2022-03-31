@@ -1,0 +1,6 @@
+---
+platform: statistics
+name: Humidity bathroom stats
+entity_id: sensor.humidity_bathroom
+sampling_size: 86400
+max_age: "24:00:00"

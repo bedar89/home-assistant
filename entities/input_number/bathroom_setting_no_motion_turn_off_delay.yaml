@@ -1,0 +1,4 @@
+---
+name: 'Time in minutes automation waits to turn off bathroom lights after no motion'
+min: 1
+max: 120

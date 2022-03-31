@@ -1,0 +1,10 @@
+---
+# Lights
+platform: history_stats
+name: Hours hallway lights have been on last 7 days
+entity_id: light.hallway_lights
+state: "on"
+type: time
+duration:
+  days: 7
+end: "{{ now() }}"

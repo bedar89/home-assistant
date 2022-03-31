@@ -1,0 +1,4 @@
+---
+name: 'Bathroom lights no longer turn on after this time'
+has_date: false
+has_time: true

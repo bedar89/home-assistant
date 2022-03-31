@@ -1,0 +1,10 @@
+---
+sensor:
+  - name: Lights on total hours
+    unit_of_measurement: h
+    state: >
+      {{ states('sensor.hours_bedroom_lights_have_been_on_last_7_days')|float(0) * 7
+      + states('sensor.hours_living_room_lights_have_been_on_last_7_days')|float(0) * 5
+      + states('sensor.hours_bathroom_light_has_been_on_last_7_days')|float(0) * 1
+      + states('sensor.hours_kitchen_lights_have_been_on_last_7_days')|float(0) * 2
+      + states('sensor.hours_hallway_lights_have_been_on_last_7_days')|float(0) * 5 }}

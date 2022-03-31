@@ -1,0 +1,6 @@
+---
+sensor:
+  - name: Timestamp start of today
+    unit_of_measurement: "s"
+    state: >
+      {{ as_timestamp(now().replace(hour=0).replace(minute=0).replace(second=0)) }}
