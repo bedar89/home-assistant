@@ -1,7 +1,7 @@
 ---
 - id: '4029069700947'
   alias: House - Volume Set - Day
-  initial_state: on
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_boolean.house_mode_sleep

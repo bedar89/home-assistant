@@ -1,0 +1,26 @@
+---
+id: '8298153596081'
+alias: House - Night Mode Activated
+initial_state: on
+trigger:
+  - platform: homeassistant
+    event: start
+  - platform: time
+    at: "21:00:00"
+condition:
+  condition: and
+  conditions:
+    - condition: or
+      conditions:
+        - condition: time
+          after: '21:00:00'
+          before: '00:00:00'
+        - condition: time
+          after: '00:00:00'
+          before: '09:30:00'
+    - condition: state
+      entity_id: input_boolean.house_mode_sleep
+      state: 'off'
+action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.house_mode_sleep

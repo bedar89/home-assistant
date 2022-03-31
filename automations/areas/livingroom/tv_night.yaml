@@ -1,7 +1,7 @@
 ---
 - id: '5698957558187'
   alias: Living Room - Night
-  initial_state: on
+  initial_state: true
   trigger:
     - platform: time_pattern
       hours: '/1'

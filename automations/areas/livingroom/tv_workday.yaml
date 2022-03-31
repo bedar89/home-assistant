@@ -1,7 +1,7 @@
 ---
 - id: '9344238260455'
   alias: Living Room - Workday
-  initial_state: off
+  initial_state: true
   trigger:
     - platform: time
       at: "7:30:00"

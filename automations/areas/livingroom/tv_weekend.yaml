@@ -1,7 +1,7 @@
 ---
 - id: '1027475514318'
   alias: Living Room - Weekend
-  initial_state: off
+  initial_state: true
   trigger:
     - platform: time
       at: "9:00:00"
