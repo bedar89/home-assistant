@@ -1,0 +1,7 @@
+---
+
+name: phones
+platform: group
+services:
+  - service: mobile_app_bedar_phone
+  - service: mobile_app_sunshine_phone
