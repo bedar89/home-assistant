@@ -1,0 +1,19 @@
+---
+
+platform: manual
+name: house
+code: !secret alarm_code
+arming_time: 30
+delay_time: 10
+trigger_time: 60
+disarmed:
+  trigger_time: 0
+armed_home:
+  arming_time: 0
+  delay_time: 30
+armed_night:
+  arming_time: 30
+  delay_time: 15
+armed_away:
+  arming_time: 30
+  delay_time: 30
