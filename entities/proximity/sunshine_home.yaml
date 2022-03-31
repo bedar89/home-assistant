@@ -1,0 +1,6 @@
+---
+sunshine_home:
+  zone: home
+  devices:
+    - person.sunshine
+  tolerance: 50

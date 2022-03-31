@@ -1,9 +1,8 @@
 ---
-
-alarm_control_panel:
-  - platform: manual
-    name: house
-    code: !secret alarm_code
-    delay_time: 30
-    arming_time: 30
-    trigger_time: 30
+# Alarm Control Panel
+#
+# This loads up my Alarm Control Panels configurations
+#
+# https://www.home-assistant.io/components/alarm_control_panel/
+#
+alarm_control_panel: !include_dir_list ../entities/alarm_control_panels

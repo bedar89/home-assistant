@@ -1,0 +1,6 @@
+---
+bedar_home:
+  zone: home
+  devices:
+    - person.bedar
+  tolerance: 50

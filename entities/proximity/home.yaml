@@ -1,0 +1,8 @@
+---
+home:
+  ignored_zones:
+    - work
+  devices:
+    - person.bedar
+    - person.sunshine
+  tolerance: 50
