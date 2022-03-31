@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_timers:
+    friendly_name: 'Timers'
+    icon_template: mdi:timer
+    value_template: "{{ states.timer | count }}"

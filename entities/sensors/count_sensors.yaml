@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_sensors:
+    friendly_name: 'Sensors'
+    icon_template: mdi:resistor
+    value_template: "{{ states.sensor | count }}"

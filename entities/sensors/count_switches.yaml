@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_switches:
+    friendly_name: 'Switches'
+    icon_template: mdi:light-switch
+    value_template: "{{ states.switch | count }}"

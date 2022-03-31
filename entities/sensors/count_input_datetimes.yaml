@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_input_datetimes:
+    friendly_name: 'Input Date/Time'
+    icon_template: mdi:calendar-clock
+    value_template: "{{ states.input_datetime | count }}"

@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_scripts:
+    friendly_name: 'Scripts'
+    icon_template: mdi:script-text-outline
+    value_template: "{{ states.script | count }}"

@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_device_trackers:
+    friendly_name: 'Devices Trackers'
+    icon_template: mdi:map-marker
+    value_template: "{{ states.device_tracker | count }}"

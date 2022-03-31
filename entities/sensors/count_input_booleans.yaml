@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_input_booleans:
+    friendly_name: 'Input Booleans'
+    icon_template: mdi:toggle-switch
+    value_template: "{{ states.input_boolean | count }}"

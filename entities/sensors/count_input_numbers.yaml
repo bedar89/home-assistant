@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_input_numbers:
+    friendly_name: 'Input Numbers'
+    icon_template: mdi:numeric
+    value_template: "{{ states.input_number | count }}"

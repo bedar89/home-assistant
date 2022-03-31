@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_locks:
+    friendly_name: 'Locks'
+    icon_template: mdi:lock
+    value_template: "{{ states.lock| count }}"

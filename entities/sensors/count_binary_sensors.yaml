@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_binary_sensors:
+    friendly_name: 'Binary Sensors'
+    icon_template: mdi:unfold-more-horizontal
+    value_template: "{{ states.binary_sensor| count }}"

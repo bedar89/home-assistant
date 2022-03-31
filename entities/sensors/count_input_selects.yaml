@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_input_selects:
+    friendly_name: 'Input Selects'
+    icon_template: mdi:view-list
+    value_template: "{{ states.input_select | count }}"

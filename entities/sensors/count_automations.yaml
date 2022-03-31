@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_automations:
+    friendly_name: 'Automations'
+    icon_template: mdi:autorenew
+    value_template: "{{ states.automation | count }}"

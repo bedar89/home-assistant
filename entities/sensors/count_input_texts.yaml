@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_input_texts:
+    friendly_name: 'Input Texts'
+    icon_template: mdi:alphabetical
+    value_template: "{{ states.input_text | count }}"

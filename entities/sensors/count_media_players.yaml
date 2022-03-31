@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_media_players:
+    friendly_name: 'Media Players'
+    icon_template: mdi:television-classic
+    value_template: "{{ states.media_player | count }}"

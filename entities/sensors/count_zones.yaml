@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  count_zones:
+    friendly_name: 'Zones'
+    icon_template: mdi:map-marker-radius
+    value_template: "{{ states.zone | count }}"
