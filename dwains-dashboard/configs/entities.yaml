@@ -20,8 +20,12 @@ binary_sensor.hallway_motion_update_available:
   disabled: true
 binary_sensor.livingroom_control_update_available:
   disabled: true
+binary_sensor.livingroom_door_contact:
+  sort_order: 1
 camera.bedroom_camera_sd:
   disabled: true
+camera.nest_iq_cam:
+  sort_order: 13
 camera.tjardo_bedroom_camera_sd:
   hidden: true
 device_tracker.broadlink_rm4c_pro:
@@ -41,6 +45,7 @@ light.led_light_strip:
   custom_card: true
 light.livingroom_lights:
   custom_card: true
+  sort_order: 2
 light.mufasa_cam_indicator_light:
   disabled: true
 light.tjardo_slaapkamer:
@@ -56,6 +61,7 @@ media_player.frontdoor_speaker:
 media_player.home_mini:
   custom_card: true
   grouped_sort_order: 4
+  sort_order: 5
 media_player.kitchen_speaker:
   custom_card: true
 media_player.kitchen_speakers:
@@ -68,9 +74,13 @@ media_player.master_bedroom_tv:
 media_player.shield:
   custom_card: true
   grouped_sort_order: 1
+  sort_order: 4
 media_player.telenettvbox:
   custom_card: true
   grouped_sort_order: 2
+  sort_order: 6
+media_player.tv:
+  sort_order: 7
 number.frontdoor_microphone_level:
   disabled: true
 remote.broadlink_remote:
@@ -145,6 +155,22 @@ sensor.livingroom_control_action:
   hidden: true
 sensor.livingroom_control_battery:
   hidden: true
+sensor.livingroom_door_battery:
+  hidden: true
+  sort_order: 12
+sensor.livingroom_door_temperature:
+  hidden: true
+  sort_order: 14
+sensor.livingroom_multisensor_battery:
+  hidden: true
+  sort_order: 8
+sensor.livingroom_multisensor_humidity:
+  sort_order: 10
+sensor.livingroom_multisensor_pressure:
+  hidden: true
+  sort_order: 11
+sensor.livingroom_multisensor_temperature:
+  sort_order: 9
 sensor.voordeur_rx:
   disabled: true
 sensor.voordeur_tx:
@@ -183,3 +209,7 @@ switch.mufasa_cam_time_watermark:
   disabled: true
 switch.mufasa_cam_video_recording:
   disabled: true
+switch.tv_switch:
+  custom_card: true
+  favorite: true
+  sort_order: 3

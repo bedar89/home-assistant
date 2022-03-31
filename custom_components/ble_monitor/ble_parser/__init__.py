@@ -16,6 +16,7 @@ from .inkbird import parse_inkbird
 from .inode import parse_inode
 from .jinou import parse_jinou
 from .kegtron import parse_kegtron
+from .laica import parse_laica
 from .miscale import parse_miscale
 from .moat import parse_moat
 from .oral_b import parse_oral_b
@@ -145,6 +146,7 @@ class BleParser:
                     elif uuid16 in [0x181C, 0x181E]:
                         # UUID16 = User Data and Bond Management (used by BLE HA)
                         sensor_data = parse_ha_ble(self, service_data, uuid16, mac, rssi)
+                        break
                     elif uuid16 in [0xAA20, 0xAA21, 0xAA22] and complete_local_name == "ECo":
                         # UUID16 = Relsib
                         sensor_data = parse_relsib(self, service_data, mac, rssi)
@@ -237,6 +239,10 @@ class BleParser:
                     elif comp_id == 0xFFFF and data_len == 0x1E:
                         # Kegtron
                         sensor_data = parse_kegtron(self, man_spec_data, mac, rssi)
+                        break
+                    elif comp_id == 0xA0AC and data_len == 0x0F and man_spec_data[14] in [0x06, 0x0D]:
+                        # Laica
+                        sensor_data = parse_laica(self, man_spec_data, mac, rssi)
                         break
 
                     # Filter on part of the UUID16

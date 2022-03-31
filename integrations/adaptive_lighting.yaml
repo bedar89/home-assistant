@@ -13,6 +13,5 @@ adaptive_lighting:
     lights:
       - light.livingroom_lights
     min_brightness: 70
-    prefer_rgb_color: false
     detect_non_ha_changes: true
     interval: 30

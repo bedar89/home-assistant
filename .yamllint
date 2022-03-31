@@ -2,6 +2,7 @@
 ignore: |
   automations.yaml
   blueprints/*/homeassistant/*.yaml
+  blueprints/*/freakshock88/*.yaml
   custom_components/
   ip_bans.yaml
   themes/

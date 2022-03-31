@@ -1,0 +1,19 @@
+---
+- id: '9344238260455'
+  alias: Living Room - Workday
+  initial_state: off
+  trigger:
+    - platform: time
+      at: "7:30:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.family
+        state: 'home'
+      - condition: state
+        entity_id: binary_sensor.workday
+        state: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.tv_switch

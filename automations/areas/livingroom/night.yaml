@@ -1,0 +1,20 @@
+---
+- id: '5698957558187'
+  alias: Living Room - Night
+  initial_state: on
+  trigger:
+    - platform: time_pattern
+      hours: '/1'
+      minutes: 0
+      seconds: 0
+  condition:
+    - condition: time
+      after: '02:00:00'
+      before: '07:15:00'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.tv_switch
+    - service: notify.pushover
+      data:
+        title: "📺 [Automation] - Automaticly turned off TV"
+        message: "The livingroom TV has been turned off automaticaly"
