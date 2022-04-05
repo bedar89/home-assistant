@@ -1,7 +1,7 @@
 ---
 id: "1425859982062"
 alias: House - Sunshine is home
-initial_state: on
+initial_state: "on"
 trigger:
   - platform: zone
     entity_id: person.sunshine

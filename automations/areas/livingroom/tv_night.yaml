@@ -10,7 +10,7 @@
   condition:
     - condition: time
       after: '02:00:00'
-      before: '09:00:00' # default: '07:15:00'
+      before: '09:00:00'  # default: '07:15:00'
     - condition: state
       entity_id: switch.tv_switch
       state: 'on'

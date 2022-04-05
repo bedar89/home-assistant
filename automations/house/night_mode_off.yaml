@@ -1,7 +1,7 @@
 ---
 id: '2175879175501'
 alias: House - Night Mode Deactivated
-initial_state: on
+initial_state: "on"
 trigger:
   - platform: homeassistant
     event: start
