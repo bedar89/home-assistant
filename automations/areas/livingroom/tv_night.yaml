@@ -1,6 +1,6 @@
 ---
 - id: '5698957558187'
-  alias: Living Room - Night
+  alias: Living Room TV - Night
   initial_state: true
   trigger:
     - platform: time_pattern
@@ -10,7 +10,10 @@
   condition:
     - condition: time
       after: '02:00:00'
-      before: '07:15:00'
+      before: '09:00:00' # default: '07:15:00'
+    - condition: state
+      entity_id: switch.tv_switch
+      state: 'on'
   action:
     - service: switch.turn_off
       entity_id: switch.tv_switch

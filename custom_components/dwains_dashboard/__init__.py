@@ -216,7 +216,7 @@ async def ws_handle_install_blueprint(
     
     filecontent = json.loads(msg["yamlCode"])
 
-    _LOGGER.warning(filecontent)
+    #_LOGGER.warning(filecontent)
 
     if not filecontent.get("blueprint"):
         _LOGGER.warning('no blueprint data')
@@ -255,7 +255,7 @@ async def ws_handle_install_blueprint(
     with open(hass.config.path("dwains-dashboard/blueprints/"+filename), 'w') as f:
         yaml.safe_dump(filecontent, f, default_flow_style=False)
 
-    reload_configuration(hass)
+    #reload_configuration(hass)
 
 
     connection.send_result(

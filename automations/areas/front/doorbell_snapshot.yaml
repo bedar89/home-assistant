@@ -1,0 +1,61 @@
+---
+- alias: "Notificatie: Deurbel snapshot"
+  id: doorbell_snapshot
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.voordeur_doorbell
+      from: "off"
+      to: "on"
+  action:
+    - service: camera.snapshot
+      data:
+        entity_id: camera.frontdoor_medium
+        filename: "/config/www/images/snapshots/cam_voordeur.jpg"
+    - service: notify.mobile_app_bedar_phone
+      data:
+        title: "🔔 Deurbel"
+        message: "Er is aangebeld!"
+        data:
+          attachment:
+            url: "/config/www/images/snapshots/cam_voordeur.jpg"
+            content-type: jpeg
+            hide-thumbnail: false
+          actions:
+            - action: URI
+              title: View in HA
+              uri: dwains-dashboard/more_page_addon_camera_s
+            - action: URI
+              title: View in Protect
+              uri: "app://com.ubnt.unifi.protect"
+    - service: notify.mobile_app_sunshine_phone
+      data:
+        title: "🔔 Deurbel"
+        message: "Er is aangebeld!"
+        data:
+          attachment:
+            url: "/config/www/images/snapshots/cam_voordeur.jpg"
+            content-type: jpeg
+            hide-thumbnail: false
+          actions:
+            - action: URI
+              title: Bekijk in HA
+              uri: dwains-dashboard/more_page_addon_camera_s
+    - service: notify.pushover
+      data:
+        title: "🔔 Deurbel"
+        message: "Er is aangebeld!"
+        data:
+          sound: pushover
+          attachment: "/config/www/images/snapshots/cam_voordeur.jpg"
+    - service: notify.lg_webos_tv_up75006lf
+      data:
+        title: "🔔  Deurbel"
+        message: "Er is aangebeld!"
+        data:
+          fontsize: small
+          position: top-right
+          duration: 10
+          interrupt: true
+          file:
+            path: "/config/www/images/snapshots/cam_voordeur.jpg"

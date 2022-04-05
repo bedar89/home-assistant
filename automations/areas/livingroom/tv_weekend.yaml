@@ -1,19 +1,23 @@
 ---
-- id: '1027475514318'
-  alias: Living Room - Weekend
+- id: "1027475514318"
+  alias: Living Room TV - Weekend
   initial_state: true
   trigger:
     - platform: time
-      at: "9:00:00"
+      at: "09:00:00" # default "07:30:00"
   condition:
     condition: and
     conditions:
       - condition: state
         entity_id: group.family
-        state: 'home'
+        state: "home"
       - condition: state
         entity_id: binary_sensor.workday
-        state: 'off'
+        state: "off"
   action:
     - service: switch.turn_on
       entity_id: switch.tv_switch
+    - service: notify.pushover
+      data:
+        title: "📺 [Automation] - Automaticly turned on TV"
+        message: "The livingroom TV has been turned on automaticaly"
