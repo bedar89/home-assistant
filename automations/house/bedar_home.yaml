@@ -1,5 +1,5 @@
 ---
-id: '7526170396705'
+id: "7526170396705"
 alias: House - Bedar is home
 initial_state: "on"
 trigger:
@@ -8,16 +8,16 @@ trigger:
     zone: zone.home
     event: enter
 condition:
-    - condition: and
-      conditions:
-        - condition: template
-          value_template: "{{ not is_state('person.sunshine', 'home') }}"
-    - condition: time
-      after: '09:00:00'
-      before: '23:00:00'
+  - condition: and
+    conditions:
+      - condition: template
+        value_template: "{{ not is_state('person.sunshine', 'home') }}"
+  - condition: time
+    after: "09:00:00"
+    before: "23:00:00"
 action:
   - service: tts.google_say
     data:
       entity_id: media_player.studio_google_mini
-      message: 'Welcome home master'
-      language: 'en'
+      message: "Welcome home master"
+      language: "en"
