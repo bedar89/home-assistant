@@ -1,7 +1,7 @@
 ---
 # Restire Samba Backup status on startup
 - alias: System - Restore Samba Backup sensor
-  initial_state: "on"
+  initial_state: true
   mode: single
   trigger:
     - event: start

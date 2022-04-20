@@ -1,0 +1,16 @@
+---
+#
+# This script will turn off all my lights
+#
+
+alias: "Alle lampen uitschakelen"
+sequence:
+  - service: light.turn_off
+    target:
+      entity_id:
+        - light.livingroom
+        - light.kitchen
+        - light.hallway
+        - light.bathroom
+        - light.computer
+        - light.diningroom

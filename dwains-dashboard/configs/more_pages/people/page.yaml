@@ -186,7 +186,7 @@ card:
 data:
   11_person_name: Bedar
   12_person_entity: person.bedar
-  13_tracker_entity: device_tracker.bedar_oneplus
+  13_tracker_entity: device_tracker.bedar_phone
   14_battery_charging_entity: binary_sensor.bedar_phone_is_charging
   15_battery_level_entity: sensor.bedar_phone_battery_level
   21_person_name: Sunshine

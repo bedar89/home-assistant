@@ -11,15 +11,11 @@
     - service: media_player.volume_set
       data:
         entity_id:
-          - media_player.kitchen_speaker
-          - media_player.bedroom_display
-          - media_player.livingroom_speaker
+          - media_player.notification_media_players
         volume_level: 0.8
     - service: media_player.play_media
       data:
         entity_id:
-          - media_player.kitchen_speaker
-          - media_player.bedroom_display
-          - media_player.livingroom_speaker
+          - media_player.notification_media_players
         media_content_id: !secret http_audio_deurbel
         media_content_type: music

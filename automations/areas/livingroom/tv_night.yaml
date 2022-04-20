@@ -1,23 +1,18 @@
 ---
-- id: '5698957558187'
+- id: "5698957558187"
   alias: Living Room TV - Night
   initial_state: true
   trigger:
-    - platform: time_pattern
-      hours: '/1'
-      minutes: 0
-      seconds: 0
+    - platform: time
+      at: "02:00:00" # default "07:30:00"
   condition:
-    - condition: time
-      after: '02:00:00'
-      before: '09:00:00'  # default: '07:15:00'
     - condition: state
       entity_id: switch.tv_switch
-      state: 'on'
+      state: "on"
   action:
     - service: switch.turn_off
       entity_id: switch.tv_switch
-    - service: notify.pushover
-      data:
-        title: "📺 [Automation] - Automaticly turned off TV"
-        message: "The livingroom TV has been turned off automaticaly"
+    # - service: notify.pushover
+    #   data:
+    #     title: "📺 [Automation] - Automaticly turned off TV"
+    #     message: "The livingroom TV has been turned off automaticaly"

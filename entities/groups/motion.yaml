@@ -1,0 +1,9 @@
+---
+motion:
+  name: Motion
+  icon: mdi:motion-sensor
+  entities:
+    - binary_sensor.bathroom_motion_occupancy
+    - binary_sensor.frontdoor_motion
+    - binary_sensor.hallway_l1_motion_occupancy
+    - binary_sensor.hallway_motion_occupancy

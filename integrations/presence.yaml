@@ -113,7 +113,8 @@ group:
 ################################################
 automation:
   # Net Aangekomen
-  - alias: Presence - Markeer persoon als net aangekomen
+  - id: 'presence_person_arrived_home'
+    alias: Presence - Markeer persoon als net aangekomen
     initial_state: true
     trigger:
       # Bedar

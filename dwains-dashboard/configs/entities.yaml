@@ -6,12 +6,15 @@ binary_sensor.computer_control_update_available:
   disabled: true
 binary_sensor.dining_control_update_available:
   disabled: true
+binary_sensor.front_door_contact:
+  sort_order: 3
 binary_sensor.frontdoor_doorbell:
   disabled: true
 binary_sensor.frontdoor_is_dark:
   disabled: true
 binary_sensor.frontdoor_motion:
   favorite: true
+  sort_order: 2
 binary_sensor.hallway_motion_illuminance_above_threshold:
   disabled: true
 binary_sensor.hallway_motion_occupancy:
@@ -24,6 +27,8 @@ binary_sensor.livingroom_door_contact:
   sort_order: 1
 camera.bedroom_camera_sd:
   disabled: true
+camera.frontdoor_medium:
+  sort_order: 1
 camera.nest_iq_cam:
   sort_order: 13
 camera.tjardo_bedroom_camera_sd:
@@ -139,6 +144,10 @@ sensor.dining_control_action:
   hidden: true
 sensor.dining_control_battery:
   hidden: true
+sensor.front_door_battery:
+  sort_order: 4
+sensor.front_door_temperature:
+  sort_order: 5
 sensor.frontdoor_detected_object:
   disabled: true
 sensor.frontdoor_disk_write_rate:

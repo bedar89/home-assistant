@@ -8,3 +8,53 @@
       light_target:
         device_id: 3178e4e6eeb1c21d063009899e5a48e6
       no_motion_wait: 300
+- id: '1649268106375'
+  alias: Basement - Waterleak
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.basement_water_water_leak
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.pushover
+    data:
+      message: De emmer in de kelder is vol! Dringend leegmaken!
+      title: 📺 [Automation] - Emmer vol!
+  - service: notify.persistent_notification
+    data:
+      message: De emmer in de kelder is vol! Dringend leegmaken!
+      title: 📺 [Automation] - Emmer vol!
+  - service: light.turn_on
+    data:
+      rgb_color:
+      - 0
+      - 0
+      - 255
+      brightness_pct: 100
+    target:
+      device_id: e8031b8f59f42e4498080fcdad628dc5
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
+  - service: light.turn_on
+    data:
+      rgb_color:
+      - 0
+      - 0
+      - 255
+      brightness_pct: 100
+    target:
+      device_id: e8031b8f59f42e4498080fcdad628dc5
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
+  mode: single

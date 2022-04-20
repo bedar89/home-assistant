@@ -1,15 +1,10 @@
 ---
-
 - alias: "Startup Notification"
   trigger:
     platform: event
     event_type: homeassistant_start
   action:
-    # - service: notify.pushover
-    #   data:
-    #     title: "Terug opgestart"
-    #     message: "🎉 Homeassistant is terug opgestart! 🎉"
-    - service: notify.phones
+    - service: notify.pushover
       data:
-        title: "Terug opgestart"
+        title: "🎉 Terug opgestart! 🎉"
         message: "🎉 Homeassistant is terug opgestart! 🎉"

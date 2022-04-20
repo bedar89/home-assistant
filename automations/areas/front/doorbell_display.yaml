@@ -1,12 +1,10 @@
 ---
-
 - alias: "Deurbel: Bericht op display"
   id: doorbell_display
   trigger:
     - platform: state
       entity_id: binary_sensor.frontdoor_motion
-      to: person
-      attribute: event_object
+      to: "on"
     - platform: template
       value_template: >
         "{{ as_timestamp(now()) -

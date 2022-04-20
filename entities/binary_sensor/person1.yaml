@@ -21,7 +21,7 @@
       platform: 'state'
       to_state: 'home'
     # Phone wifi connection
-    - entity_id: sensor.oneplus_wifi_connection
+    - entity_id: sensor.bedar_phone_wifi_connection
       prob_given_true: 0.8
       prob_given_false: 0.1
       platform: 'state'

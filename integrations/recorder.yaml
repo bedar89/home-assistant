@@ -17,7 +17,7 @@ recorder:
   exclude:
     entities:
       - sensor.time
-      - sensor.ha_uptime
+      - sensor.uptime_4
 
     domains:
       - updater
@@ -30,3 +30,11 @@ recorder:
       - media_player
       - sun
       - camera
+
+    entity_globs:
+      - sensor.clock*
+      - sensor.date*
+      - sensor.glances*
+      - sensor.load_*m
+      - sensor.time*
+      - sensor.uptime*

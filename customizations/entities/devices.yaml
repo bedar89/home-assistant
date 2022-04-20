@@ -1,0 +1,20 @@
+---
+
+# Customize light entities
+light.hallway_lights:
+  icon: mdi:lightbulb-group
+
+light.livingroom_lights:
+  icon: mdi:lightbulb-group
+
+light.dining_lights:
+  icon: mdi:lightbulb-group
+
+light.kitchen_lights:
+  icon: mdi:lightbulb-group
+
+light.bathroom_lights:
+  icon: mdi:lightbulb-group
+
+light.led_light_strip:
+  icon: mdi:led-strip

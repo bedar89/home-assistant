@@ -2,7 +2,6 @@
 - alias: "House Away Mode Detection"
   description: >-
     Automation to control the away mode of the house automatically.
-
     This is mostly based on our alarm system at this point.
 
   id: "3115d7be-d6de-4f1e-b852-21sfsdfa01"
@@ -11,10 +10,8 @@
   trigger:
     - platform: homeassistant
       event: start
-
     - platform: event
       event_type: automation_reloaded
-
     - platform: state
       entity_id:
         - alarm_control_panel.house

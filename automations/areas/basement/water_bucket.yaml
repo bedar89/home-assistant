@@ -1,0 +1,29 @@
+---
+- id: "3126587321"
+  alias: Basement Waterleak
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.basement_water_water_leak
+      from: "off"
+      to: "on"
+  action:
+    - service: notify.pushover
+      data:
+        title: "📺 [Automation] - Emmer vol!"
+        message: "De emmer in de kelder is vol! Dringend leegmaken!"
+
+    - service: persistent_notification.create
+      data:
+        title: "📺 [Automation] - Emmer vol!"
+        message: "De emmer in de kelder is vol! Dringend leegmaken!"
+
+    - service: light.turn_on
+      target:
+        entity_id: light.led_light_strip
+      data:
+        rgb_color:
+          - 0
+          - 0
+          - 255
+        brightness_pct: 100

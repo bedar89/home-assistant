@@ -1,0 +1,26 @@
+---
+####################### LET'S GO #######################
+# Let Home Assistant set everything off when you go away
+#
+go_away:
+  alias: "Verlaat het huis"
+  sequence:
+    # # Turn off automated lights
+    # - service: input_boolean.turn_off
+    #   target:
+    #     entity_id: input_boolean.lights_automated
+
+    # Turn all the lights off
+    - service: light.turn_off
+      target:
+        entity_id:
+          - light.hallway
+          - light.livingroom
+          - light.diningroom
+          - light.kitchen
+          - light.bathroom
+
+    # TODO: Instellen dat alle media_players stoppen en TV uitgezet word
+    # # Stop music
+    # - service: media_player.media_stop
+    #   entity_id: media_player.google_home

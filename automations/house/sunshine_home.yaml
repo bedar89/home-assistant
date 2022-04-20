@@ -16,7 +16,7 @@ condition:
     after: "09:00:00"
     before: "23:00:00"
 action:
-  - service: tts.google_say
+  - service: tts.cloud_say
     data:
       entity_id: media_player.home_mini
       message: "Welcome home my queen"

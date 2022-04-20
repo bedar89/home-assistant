@@ -1,7 +1,4 @@
 ---
-# This alerts me on my iPhone when a new release
-# of Home Assistant for Hass.io is released.
-#
 - alias: "Systeem: Hass update notificatie"
   id: system.hass_update_alert
   trigger:

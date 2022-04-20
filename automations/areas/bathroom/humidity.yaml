@@ -1,12 +1,12 @@
 ---
-- id: '9020727474147'
+- id: "9020727474147"
   alias: Bathroom - Humidity Alert
   initial_state: true
 
   trigger:
     - platform: numeric_state
       entity_id: sensor.bathroom_multisensor_humidity
-      above: '80'
+      above: "80"
       for:
         minutes: 5
 
@@ -15,10 +15,10 @@
     conditions:
       - condition: state
         entity_id: binary_sensor.bathroom_motion_occupancy
-        state: 'true'
+        state: "true"
 
   action:
-    - service: tts.google_say
+    - service: tts.cloud_say
       data:
         entity_id: media_player.bathroom_speaker
         message: "Het is te vochtig in de badkamer. Zet de deur open indien mogelijk!"

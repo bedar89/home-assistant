@@ -3,20 +3,26 @@
 # Experimental sensor for home/away detection
 #
 
-- platform: 'bayesian'
+- platform: bayesian
   prior: 0.65
   name: 'Sunshine Thuis'
   probability_threshold: 0.8
   observations:
     # Wifi
-    - entity_id: device_tracker.sm_g770f
+    - entity_id: device_tracker.sunshine_phone
       prob_given_true: 0.8
       prob_given_false: 0.3
       platform: 'state'
       to_state: 'home'
-    # Icloud
-    - entity_id: device_tracker.sunshine_samsung_ping
+    # Android Companion app
+    - entity_id: device_tracker.sunshinephone
       prob_given_true: 0.9
       prob_given_false: 0.1
       platform: 'state'
       to_state: 'home'
+    # Phone wifi connection
+    - entity_id: sensor.sunshine_phone_wifi_connection
+      prob_given_true: 0.8
+      prob_given_false: 0.1
+      platform: 'state'
+      to_state: 'Bedar'
