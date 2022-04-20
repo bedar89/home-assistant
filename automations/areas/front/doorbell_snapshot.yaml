@@ -28,7 +28,7 @@
             - action: URI
               title: View in Protect
               uri: "app://com.ubnt.unifi.protect"
-    - service: notify.mobile_app_sunshine_phone
+    - service: notify.mobile_app_sm_g770f
       data:
         title: "🔔 Deurbel"
         message: "Er is aangebeld!"
