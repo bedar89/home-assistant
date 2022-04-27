@@ -5,6 +5,6 @@ sensor:
     state: >
       {{ states('sensor.hours_dining_lights_have_been_on_last_7_days')|float(0) * 7
       + states('sensor.hours_livingroom_lights_have_been_on_last_7_days')|float(0) * 5
-      + states('sensor.hours_bathroom_lights_has_been_on_last_7_days')|float(0) * 1
+      + states('sensor.hours_bathroom_lights_have_been_on_last_7_days')|float(0) * 1
       + states('sensor.hours_kitchen_lights_have_been_on_last_7_days')|float(0) * 2
       + states('sensor.hours_hallway_lights_have_been_on_last_7_days')|float(0) * 5 }}

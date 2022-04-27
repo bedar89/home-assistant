@@ -26,9 +26,10 @@ harmony_*.conf
 google_calendars.yaml
 known_devices.yaml
 alarm.yaml
+watchmen_report.txt
 
 # Build-in blueprints ignores
-blueprints/*/homeassistant
+blueprints/*
 
 # Ignore add-on files
 notebooks
