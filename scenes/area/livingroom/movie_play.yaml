@@ -1,0 +1,12 @@
+---
+- name: "[Movie Mode] Play (yaml)"
+  icon: mdi:movie
+  entities:
+    light.livingroom_lights:
+      state: "off"
+    light.dining_lights:
+      state: "off"
+    light.kitchen_lights:
+      state: "off"
+    light.led_light_strip:
+      state: "off"

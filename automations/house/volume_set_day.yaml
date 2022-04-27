@@ -1,33 +1,33 @@
 ---
-- id: '4029069700947'
+- id: "4029069700947"
   alias: House - Volume Set - Day
   initial_state: true
   trigger:
     - platform: state
       entity_id: input_boolean.house_mode_sleep
-      to: 'off'
+      to: "off"
   action:
     - service: media_player.volume_set
       data:
-        entity_id: media_player.home_mini
-        volume_level: '0.45'
+        entity_id: media_player.livingroom_speaker
+        volume_level: "0.45"
     - service: media_player.volume_set
       data:
         entity_id: media_player.kitchen_speaker
-        volume_level: '0.25'
+        volume_level: "0.25"
     - service: media_player.volume_set
       data:
         entity_id: media_player.kitchen_speakers
-        volume_level: '0.25'
+        volume_level: "0.25"
     - service: media_player.volume_set
       data:
         entity_id: media_player.bathroom_speaker
-        volume_level: '0.25'
+        volume_level: "0.25"
     - service: media_player.volume_set
       data:
         entity_id: media_player.backyard_speaker
-        volume_level: '0.25'
+        volume_level: "0.25"
     - service: media_player.volume_set
       data:
         entity_id: media_player.bedroom_display
-        volume_level: '0.25'
+        volume_level: "0.25"

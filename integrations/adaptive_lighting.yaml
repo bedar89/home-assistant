@@ -15,3 +15,15 @@ adaptive_lighting:
     min_brightness: 70
     detect_non_ha_changes: true
     interval: 30
+
+  - name: default
+    lights:
+      - light.livingroom_lights
+      - light.dining_lights
+      - light.kitchen_lights
+      - light.bathroom_lights
+      - light.hallway_lights
+    min_brightness: 70
+    prefer_rgb_color: true
+    detect_non_ha_changes: true
+    interval: 30

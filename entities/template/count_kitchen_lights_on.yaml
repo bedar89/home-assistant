@@ -1,0 +1,4 @@
+---
+sensor:
+  - name: "Kitchen lights on"
+    state: "{{ expand(state_attr('light.kitchen_lights', 'entity_id')) | selectattr('state', 'eq', 'on') | list | count }}"

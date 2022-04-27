@@ -41,23 +41,23 @@ homeassistant:
     ## Automation
     ################################################
 
-    automation.markeer_persoon_als_lang_weg:
+    automation.presence_markeer_persoon_als_lang_weg:
       <<: *customize
       hidden: true
 
-    automation.markeer_persoon_als_net_aangekomen:
+    automation.presence_markeer_persoon_als_net_aangekomen:
       <<: *customize
       hidden: true
 
-    automation.markeer_persoon_als_net_vertrokken:
+    automation.presence_markeer_persoon_als_net_vertrokken:
       <<: *customize
       hidden: true
 
-    automation.markeer_persoon_als_thuis:
+    automation.presence_markeer_persoon_als_thuis:
       <<: *customize
       hidden: true
 
-    automation.markeer_persoon_als_weg:
+    automation.presence_markeer_persoon_als_weg:
       <<: *customize
       hidden: true
 

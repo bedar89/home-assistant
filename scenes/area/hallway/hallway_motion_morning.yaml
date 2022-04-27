@@ -1,0 +1,7 @@
+---
+- name: "Hallway motion - Morning"
+  icon: mdi:lightbulb-auto
+  entities:
+    light.hallway_lights:
+      state: "on"
+      brightness: 51

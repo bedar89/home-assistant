@@ -1,0 +1,6 @@
+---
+sensor:
+  - name: "lights on"
+    unique_id: "2461368723316564"
+    # unit_of_measurement: "on"
+    state: "{{ states.light |selectattr('state','equalto','on') |list |count }}"

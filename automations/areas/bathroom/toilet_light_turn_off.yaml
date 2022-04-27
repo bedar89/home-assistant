@@ -1,0 +1,28 @@
+---
+# Automate the bathroom light
+# The lights go on by opening the door and goes off every 15 minutes when the door is closed
+# Also the lights will be dimmed in the night
+#
+
+- alias: "Bathroom - Turn OFF bathroom light"
+  description: >-
+    Turn the light off when there is no motion for 6 minutes
+
+  id: 40f79c91-8483-4ef7-b6d5-4025ad306276
+  mode: single
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion_occupancy
+      to: "off"
+      for:
+        minutes: 1
+  condition:
+    # Keep the light on when you take a shower
+    - condition: numeric_state
+      entity_id: sensor.bathroom_multisensor_humidity
+      below: 75
+  action:
+    - service: light.turn_off
+      target:
+        entity_id: light.bathroom_light_1

@@ -1,2 +1,0 @@
-entity: binary_sensor.bathroom_motion_occupancy
-type: custom:mushroom-entity-card

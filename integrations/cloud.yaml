@@ -13,7 +13,7 @@ cloud:
 
     # Filters for entities to include/exclude from Google Assistant.
     # These are loaded from a separate directory.
-    filter:
-      include_entities:
-        - script.start_sleep
-        - script.start_sleep_with_alarm
+    # filter:
+    #   include_entities:
+    #     - script.start_sleep
+    #     - script.start_sleep_with_alarm

@@ -1,13 +1,3 @@
-- id: '1648725339746'
-  alias: Toilet light
-  description: ''
-  use_blueprint:
-    path: homeassistant/motion_light.yaml
-    input:
-      motion_entity: binary_sensor.bathroom_motion_occupancy
-      light_target:
-        device_id: 3178e4e6eeb1c21d063009899e5a48e6
-      no_motion_wait: 300
 - id: '1649268106375'
   alias: Basement - Waterleak
   description: ''
@@ -58,3 +48,145 @@
       seconds: 10
       milliseconds: 0
   mode: single
+- id: '1650622339312'
+  alias: Remote - Computer control
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e1743.yaml
+    input:
+      integration: Zigbee2MQTT
+      controller_device: 2f504c286c1a0e7f9a405d221eddcf03
+      controller_entity: sensor.bedroom_control_action
+      action_button_up_short:
+      - type: turn_on
+        device_id: e8031b8f59f42e4498080fcdad628dc5
+        entity_id: light.led_light_strip
+        domain: light
+      action_button_down_short:
+      - type: turn_off
+        device_id: e8031b8f59f42e4498080fcdad628dc5
+        entity_id: light.led_light_strip
+        domain: light
+      helper_last_controller_event: input_text.computer_control_last_event
+- id: '1650624391957'
+  alias: Control - Livingroom
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e1524_e1810.yaml
+    input:
+      integration: Zigbee2MQTT
+      controller_entity: sensor.livingroom_control_action
+      helper_last_controller_event: input_text.livingroom_control_last_event
+      action_button_left_short: []
+      action_button_center_short: []
+- id: '1650624651314'
+  alias: Hook - Livingroom lights
+  description: ''
+  use_blueprint:
+    path: EPMatt/light.yaml
+    input:
+      controller_entity: sensor.livingroom_control_action
+      controller_model: IKEA E1524/E1810 TRÅDFRI Wireless 5-Button Remote
+      light: light.livingroom_lights
+- id: '1650624781882'
+  alias: Control - Diningroom
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e1524_e1810.yaml
+    input:
+      integration: Zigbee2MQTT
+      controller_entity: sensor.dining_control_action
+      helper_last_controller_event: input_text.dining_control_last_event
+- id: '1650624810209'
+  alias: Hook - Dining lights
+  description: ''
+  use_blueprint:
+    path: EPMatt/light.yaml
+    input:
+      controller_entity: sensor.dining_control_action
+      controller_model: IKEA E1524/E1810 TRÅDFRI Wireless 5-Button Remote
+      light: light.dining_lights
+- id: '1650625171580'
+  alias: Control - Kitchen lights
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e2001_e2002.yaml
+    input:
+      integration: Zigbee2MQTT
+      controller_entity: sensor.kitchen_control_action
+      helper_last_controller_event: input_text.kitchen_control_last_event
+- id: '1650625217628'
+  alias: Hook - Kitchen lights
+  description: ''
+  use_blueprint:
+    path: EPMatt/light.yaml
+    input:
+      controller_entity: sensor.kitchen_control_action
+      controller_model: IKEA E2001/E2002 STYRBAR Remote control
+      light: light.kitchen_lights
+- id: '1650626220504'
+  alias: Motion - Hallway lights
+  description: ''
+  use_blueprint:
+    path: networkingcat/yet_another_motion_automation.yaml
+    input:
+      motion_entity: binary_sensor.hallway_motion_occupancy
+      light_target:
+        entity_id: light.hallway_lights
+      scene_morning: scene.hallway_motion_morning
+      time_scene_morning: 07:00:00
+      scene_day: scene.hallway_motion_normal
+      time_scene_day: '10:00:00'
+      scene_evening: scene.hallway_motion_evening
+      time_scene_evening: '19:00:00'
+      scene_no_motion: scene.hallway_motion_off
+- id: '1650631600049'
+  alias: Bathroom - Toilet light
+  description: Turn the light on when I open a door or if there is motion
+  use_blueprint:
+    path: networkingcat/yet_another_motion_automation.yaml
+    input:
+      motion_entity: binary_sensor.bathroom_motion_occupancy
+      light_target:
+        device_id: 3178e4e6eeb1c21d063009899e5a48e6
+      scene_morning: scene.toilet_motion_morning
+      scene_day: scene.toilet_motion_off
+      scene_evening: scene.toilet_motion_evening
+      scene_no_motion: scene.toilet_motion_off
+      time_scene_morning: 03:00:00
+      time_scene_day: 08:00:00
+      time_scene_evening: '18:00:00'
+      scene_night: scene.toilet_motion_off
+      time_scene_night: 03:00:00
+- id: '1651066617640'
+  alias: Control - Hallway
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e1524_e1810.yaml
+    input:
+      integration: Zigbee2MQTT
+      controller_entity: sensor.hallway_control_action
+      helper_last_controller_event: input_text.hallway_control_last_event
+- id: '1651066739799'
+  alias: Hook - Hallway lights
+  description: ''
+  use_blueprint:
+    path: EPMatt/light.yaml
+    input:
+      controller_entity: sensor.hallway_control_action
+      controller_model: IKEA E1524/E1810 TRÅDFRI Wireless 5-Button Remote
+      light: light.hallway_lights
+- id: '1651069716135'
+  alias: Update notifications
+  description: ''
+  use_blueprint:
+    path: mdegat01/update_notifications.yaml
+    input:
+      reminder_hours: '3'
+      update_entities:
+      - update.home_assistant_core_update
+      - update.home_assistant_operating_system_update
+      - update.home_assistant_supervisor_update
+      mobile_app_device: c3425e0f2e86498c190ee1b31299dcf4
+      send_to_ha: true
+      run_config_check: true

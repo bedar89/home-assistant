@@ -1,0 +1,7 @@
+---
+- name: "Toilet motion - Evening"
+  icon: mdi:lightbulb-auto
+  entities:
+    light.bathroom_light_1:
+      state: "on"
+      brightness: 120

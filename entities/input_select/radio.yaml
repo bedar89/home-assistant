@@ -22,9 +22,12 @@ radio_station:
 radio_speaker:
   name: "Select Speaker"
   options:
-    - media_player.google_home
-    - media_player.google_home_hub
-    - media_player.home_mini_master_bedroom
-    - media_player.home_mini_kai
-    - media_player.sonos
+    - media_player.backyard_speaker
+    - media_player.bathroom_speaker
+    - media_player.bedroom_display
+    - media_player.kitchen_speaker
+    - media_player.kitchen_speakers
+    - media_player.livingroom_speaker
+    - media_player.master_bedroom_tv
+    - media_player.shield
   icon: mdi:speaker-wireless

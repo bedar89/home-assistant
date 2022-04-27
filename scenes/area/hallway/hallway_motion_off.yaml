@@ -1,0 +1,6 @@
+---
+- name: "Hallway motion - Off"
+  icon: mdi:lightbulb-auto
+  entities:
+    light.hallway_lights:
+      state: "off"

@@ -1,0 +1,27 @@
+---
+# Automate the bathroom light
+# The lights go on by opening the door and goes off every 15 minutes when the door is closed
+# Also the lights will be dimmed in the night
+#
+- alias: "Bathroom - Turn ON bathroom light"
+  description: >-
+    Turn the light on when I open a door or if there is motion
+
+  id: 2498664e-7b8d-4de5-9613-25435b183274
+  mode: single
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion_occupancy
+      to: "on"
+      from: "off"
+  action:
+    - service: light.turn_on
+      target:
+        entity_id: light.bathroom_light_1
+      data_template:
+        color_temp: 380
+        brightness_pct: >
+          {% if is_state ('binary_sensor.night' , 'on') %} 15
+          {% else %} 70
+          {% endif %}

@@ -8,9 +8,9 @@ sequence:
   - service: light.turn_off
     target:
       entity_id:
-        - light.livingroom
-        - light.kitchen
-        - light.hallway
-        - light.bathroom
-        - light.computer
-        - light.diningroom
+        - light.livingroom_lights
+        - light.kitchen_lights
+        - light.hallway_lights
+        - light.bathroom_lights
+        - light.led_light_strip
+        - light.dining_lights

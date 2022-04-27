@@ -5,24 +5,24 @@
 
 - platform: bayesian
   prior: 0.65
-  name: 'Sunshine Thuis'
+  name: "Sunshine Thuis"
   probability_threshold: 0.8
   observations:
     # Wifi
     - entity_id: device_tracker.sunshine_phone
       prob_given_true: 0.8
       prob_given_false: 0.3
-      platform: 'state'
-      to_state: 'home'
+      platform: "state"
+      to_state: "home"
     # Android Companion app
     - entity_id: device_tracker.sunshinephone
       prob_given_true: 0.9
       prob_given_false: 0.1
-      platform: 'state'
-      to_state: 'home'
+      platform: "state"
+      to_state: "home"
     # Phone wifi connection
-    - entity_id: sensor.sunshine_phone_wifi_connection
+    - entity_id: sensor.sm_g770f_wifi_connection
       prob_given_true: 0.8
       prob_given_false: 0.1
-      platform: 'state'
-      to_state: 'Bedar'
+      platform: "state"
+      to_state: "Bedar"

@@ -1,4 +1,0 @@
----
-disable_clock: false
-weather_entity: weather.buienradar
-alarm_entity: ''

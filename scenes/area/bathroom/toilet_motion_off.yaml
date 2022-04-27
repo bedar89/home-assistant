@@ -1,0 +1,6 @@
+---
+- name: "Toilet motion - Off"
+  icon: mdi:lightbulb-auto
+  entities:
+    light.bathroom_light_1:
+      state: "off"
