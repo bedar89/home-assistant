@@ -384,11 +384,21 @@ SENSOR_TYPES: tuple[BLEMonitorSensorEntityDescription, ...] = (
         state_class=SensorStateClass.MEASUREMENT,
     ),
     BLEMonitorSensorEntityDescription(
-        key="temperature alarm",
+        key="temperature alarm probe 1",
         sensor_class="TemperatureSensor",
         update_behavior="Averaging",
-        name="ble temperature alarm",
-        unique_id="t_alarm_",
+        name="ble temperature alarm probe 1",
+        unique_id="t_alarm_probe_1_",
+        native_unit_of_measurement=TEMP_CELSIUS,
+        device_class=SensorDeviceClass.TEMPERATURE,
+        state_class=SensorStateClass.MEASUREMENT,
+    ),
+    BLEMonitorSensorEntityDescription(
+        key="temperature alarm probe 2",
+        sensor_class="TemperatureSensor",
+        update_behavior="Averaging",
+        name="ble temperature alarm probe 2",
+        unique_id="t_alarm_probe_2_",
         native_unit_of_measurement=TEMP_CELSIUS,
         device_class=SensorDeviceClass.TEMPERATURE,
         state_class=SensorStateClass.MEASUREMENT,
@@ -1004,7 +1014,9 @@ MEASUREMENT_DICT = {
     'H5074'                   : [["temperature", "humidity", "battery", "rssi"], [], []],
     'H5178'                   : [["temperature", "temperature outdoor", "humidity", "humidity outdoor", "battery", "rssi"], [], []],
     'H5179'                   : [["temperature", "humidity", "battery", "rssi"], [], []],
-    'H5183'                   : [["temperature probe 1", "temperature alarm", "rssi"], [], []],
+    'H5182'                   : [["temperature probe 1", "temperature alarm probe 1", "temperature probe 2", "temperature alarm probe 2", "rssi"], [], []],
+    'H5183'                   : [["temperature probe 1", "temperature alarm probe 1", "rssi"], [], []],
+    'H5185'                   : [["temperature probe 1", "temperature alarm probe 1", "temperature probe 2", "temperature alarm probe 2", "rssi"], [], []],
     'Ruuvitag'                : [["temperature", "humidity", "pressure", "battery", "voltage", "rssi"], ["acceleration"], ["motion"]],
     'iNode Energy Meter'      : [["battery", "voltage", "rssi"], ["energy", "power"], []],
     "iNode Care Sensor 1"     : [["temperature", "battery", "voltage", "rssi"], ["acceleration"], ["motion"]],
@@ -1032,6 +1044,7 @@ MEASUREMENT_DICT = {
     'b-parasite V1.0.0'       : [["temperature", "humidity", "moisture", "voltage", "rssi"], [], []],
     'b-parasite V1.1.0'       : [["temperature", "humidity", "moisture", "voltage", "rssi", "illuminance"], [], []],
     'SmartSeries 7000'        : [["rssi"], [], ["toothbrush"]],
+    'IO Series 7'             : [["rssi"], [], ["toothbrush"]],
     'iBBQ-1'                  : [["temperature probe 1", "rssi"], [], []],
     'iBBQ-2'                  : [["temperature probe 1", "temperature probe 2", "rssi"], [], []],
     'iBBQ-4'                  : [["temperature probe 1", "temperature probe 2", "temperature probe 3", "temperature probe 4", "rssi"], [], []],
@@ -1047,6 +1060,7 @@ MEASUREMENT_DICT = {
     'Meter TH plus'           : [["temperature", "humidity", "battery", "rssi"], [], []],
     'Laica Smart Scale'       : [["weight", "impedance", "rssi"], [], []],
     "Acconeer XM122"          : [["temperature", "battery", "rssi"], [], ["motion"]],
+    'K6 Sensor Beacon'        : [["temperature", "humidity", "acceleration", "voltage", "battery", "rssi"], [], []],
 }
 
 # Sensor manufacturer dictionary
@@ -1113,6 +1127,7 @@ MANUFACTURER_DICT = {
     'H5178'                   : 'Govee',
     'H5179'                   : 'Govee',
     'H5183'                   : 'Govee',
+    'H5185'                   : 'Govee',
     'Ruuvitag'                : 'Ruuvitag',
     'iNode Energy Meter'      : 'iNode',
     "iNode Care Sensor 1"     : 'iNode',
@@ -1140,6 +1155,7 @@ MANUFACTURER_DICT = {
     'b-parasite V1.0.0'       : 'rbaron',
     'b-parasite V1.1.0'       : 'rbaron',
     'SmartSeries 7000'        : 'Oral-B',
+    'IO Series 7'             : 'Oral-B',
     'iBBQ-1'                  : 'Inkbird',
     'iBBQ-2'                  : 'Inkbird',
     'iBBQ-4'                  : 'Inkbird',
@@ -1155,6 +1171,7 @@ MANUFACTURER_DICT = {
     'Meter TH plus'           : 'Switchbot',
     'Laica Smart Scale'       : 'Laica',
     'Acconeer XM122'          : 'Acconeer',
+    'K6 Sensor Beacon'        : 'KKM',
 }
 
 
@@ -1230,6 +1247,7 @@ REPORT_UNKNOWN_LIST = [
     "iBeacon",
     "Jinou"
     "Kegtron",
+    "KKM",
     "Mi Scale",
     "Moat",
     "Oral-B",
