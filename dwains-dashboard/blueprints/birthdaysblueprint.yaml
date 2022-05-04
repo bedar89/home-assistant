@@ -1,0 +1,67 @@
+blueprint:
+  custom_cards:
+  - button-card
+  - atomic-calendar-revive
+  description: Birthdays bleuprint by Michel Jourdain
+  input:
+    10_translate_birthdays:
+      description: Translate Birthdays in your language
+      name: Birthdays in your language
+      type: text-field
+    11_birthdays_calendar:
+      description: Birthdays from Google calendar
+      name: Google birthdays calendar
+      type: entity-picker
+    12_number_of_days_calendar:
+      description: Number of days to show in calendar
+      name: Number of days to show
+      type: text-field
+    13_calendar_fullDayEventText:
+      description: Calendar full day event text in your language Ex Jour entier
+      name: Calendar full day event text for next days
+      type: text-field
+    14_calendar_language:
+      description: Calendar Language da/de/en/et/fr/nb/sl/sv
+      name: Calendar Language
+      type: text-field
+  name: BirthdaysBlueprint
+  type: page
+  version: '1.0'
+card:
+  cards:
+  - cards:
+    - cards:
+      - content: '![Image](https://www.iphonelife.com/sites/iphonelife.com/files/memoji_0.jpg)
+
+          '
+        type: markdown
+      items_classes: col-xs-12 col-md-12
+      type: custom:dwains-flexbox-card
+    - cards:
+      - name: $10_translate_birthdays$
+        styles:
+          card:
+          - text-transform: uppercase
+          - font-size: 125%
+          - border-radius: 0%
+          - font-weight: 100
+          - letter-spacing: 10px
+          - height: 15px
+        type: custom:button-card
+      - entities:
+        - entity: $11_birthdays_calendar$
+        fullDayEventText: $13_calendar_fullDayEventText$
+        lamguage: $14_calendar_language$
+        maxDaysToShow: $12_number_of_days_calendar$
+        showMonth: true
+        showProgressBar: true
+        showWeekDay: false
+        style: "ha-card {\n  border-radius: 5px;\n  background-color: var(--dwains-theme-primary);\n\
+          }\n.cal-titleContainer {\n  display: none;\n}\n"
+        type: custom:atomic-calendar-revive
+      items_classes: col-xs-12 col-md-12
+      type: custom:dwains-flexbox-card
+    items_classes: col-xs-12 col-sm-6 col-sm-6
+    type: custom:dwains-flexbox-card
+  items_classes: col-xs-12
+  type: custom:dwains-flexbox-card

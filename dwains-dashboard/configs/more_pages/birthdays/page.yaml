@@ -1,0 +1,46 @@
+blueprint: birthdaysblueprint.yaml
+card:
+  cards:
+  - cards:
+    - cards:
+      - content: '![Image](https://www.iphonelife.com/sites/iphonelife.com/files/memoji_0.jpg)
+
+          '
+        type: markdown
+      items_classes: col-xs-12 col-md-12
+      type: custom:dwains-flexbox-card
+    - cards:
+      - name: $10_translate_birthdays$
+        styles:
+          card:
+          - text-transform: uppercase
+          - font-size: 125%
+          - border-radius: 0%
+          - font-weight: 100
+          - letter-spacing: 10px
+          - height: 15px
+        type: custom:button-card
+      - entities:
+        - entity: $11_birthdays_calendar$
+        fullDayEventText: $13_calendar_fullDayEventText$
+        lamguage: $14_calendar_language$
+        maxDaysToShow: $12_number_of_days_calendar$
+        showMonth: true
+        showProgressBar: true
+        showWeekDay: false
+        style: "ha-card {\n  border-radius: 5px;\n  background-color: var(--dwains-theme-primary);\n\
+          }\n.cal-titleContainer {\n  display: none;\n}\n"
+        type: custom:atomic-calendar-revive
+      items_classes: col-xs-12 col-md-12
+      type: custom:dwains-flexbox-card
+    items_classes: col-xs-12 col-sm-6 col-sm-6
+    type: custom:dwains-flexbox-card
+  items_classes: col-xs-12
+  type: custom:dwains-flexbox-card
+data:
+  10_translate_birthdays: Verjaardagen
+  11_birthdays_calendar: calendar.verjaardagen
+  12_number_of_days_calendar: 12_number_of_days_calendar
+  13_calendar_fullDayEventText: Volledige dag
+  14_calendar_language: nl
+type: custom:dwains-blueprint-card

@@ -1,0 +1,11 @@
+---
+#
+# List of light entities that is exposed to Google Assistant
+#
+# entities:
+- light.hallway_lights
+- light.livingroom_lights
+- light.dining_lights
+- light.kitchen_lights
+- light.bathroom_lights
+- light.bedroom_lights

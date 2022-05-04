@@ -1,0 +1,40 @@
+blueprint: towinkprintercartridges.yaml
+card:
+  cards:
+  - direction: up
+    entities:
+    - color: $11_Cartridge_1_color$
+      entity: $12_Cartridge_1_entity$
+      name: $10_Cartridge_1_name$
+    - color: $21_Cartridge_2_color$
+      entity: $22_Cartridge_2_entity$
+      name: $20_Cartridge_2_name$
+    height: 200px
+    position: bottom
+    positions:
+      icon: inside
+      indicator: outside
+      name: outside
+      value: outside
+    stack: horizontal
+    target: 10
+    type: custom:bar-card
+    unit_of_measurement: '%'
+    width: 100%
+  items_classes: col-xs-12
+  type: custom:dwains-flexbox-card
+col_span: '1'
+col_span_lg: '1'
+col_span_xl: '1'
+data:
+  10_Cartridge_1_name: Black - PG-540XL
+  11_Cartridge_1_color: Black
+  12_Cartridge_1_entity: sensor.canon_mg3600_series_black
+  20_Cartridge_2_name: Color - PG-540XL
+  21_Cartridge_2_color: Green
+  22_Cartridge_2_entity: sensor.canon_mg3600_series_color
+position: top
+row_span: '1'
+row_span_lg: '1'
+row_span_xl: '1'
+type: custom:dwains-blueprint-card

@@ -1,0 +1,14 @@
+blueprint: replace_mushroom_alarm_card.yaml
+card:
+  entity: $replace_with_input_entity$
+  hide_state: false
+  name: $replace_with_input_name$
+  states:
+  - armed_home
+  - armed_away
+  - armed_night
+  - armed_vacation
+  - armed_custom_bypass
+  type: custom:mushroom-alarm-control-panel-card
+input_entity: alarm_control_panel.alarmo
+type: custom:dwains-blueprint-card

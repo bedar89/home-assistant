@@ -1,0 +1,129 @@
+---
+#
+# https://github.com/JamesMcCarthy79/Home-Assistant-Config/blob/2c91d5cf8f26fbba33d6af1fa3a04a90f0bd8c16/config/packages/things_status/things_status.yaml
+#
+
+platform: template
+sensors:
+  sensor_count:
+    friendly_name: "Number of Sensors"
+    value_template: >
+      {% set dump = states('sensor.date') %}
+      {%- set domains = ['sensor'] -%}
+      {%- for domain in domains -%}
+        {%- for item in states[domain] -%}
+          {% if loop.first %}
+            {{loop.length}}
+          {% endif %}
+        {%- endfor -%}
+      {%- endfor -%}
+
+  automation_count:
+    friendly_name: "Number of Automations"
+    value_template: >
+      {% set dump = states('sensor.date') %}
+      {%- set domains = ['automation'] -%}
+      {%- for domain in domains -%}
+        {%- for item in states[domain] -%}
+          {% if loop.first %}
+            {{loop.length}}
+          {% endif %}
+        {%- endfor -%}
+      {%- endfor -%}
+
+  script_count:
+    friendly_name: "Number of Scripts"
+    value_template: >
+      {% set dump = states('sensor.date') %}
+      {%- set domains = ['script'] -%}
+      {%- for domain in domains -%}
+        {%- for item in states[domain] -%}
+          {% if loop.first %}
+            {{loop.length}}
+          {% endif %}
+        {%- endfor -%}
+      {%- endfor -%}
+
+  switch_count:
+    friendly_name: "Number of Switches"
+    value_template: >
+      {% set dump = states('sensor.date') %}
+      {%- set domains = ['switch'] -%}
+      {%- for domain in domains -%}
+        {%- for item in states[domain] -%}
+          {% if loop.first %}
+            {{loop.length}}
+          {% endif %}
+        {%- endfor -%}
+      {%- endfor -%}
+
+  binary_sensor_count:
+    friendly_name: "Number of Binary Sensors"
+    value_template: >
+      {% set dump = states('sensor.date') %}
+      {%- set domains = ['binary_sensor'] -%}
+      {%- for domain in domains -%}
+        {%- for item in states[domain] -%}
+          {% if loop.first %}
+            {{loop.length}}
+          {% endif %}
+        {%- endfor -%}
+      {%- endfor -%}
+
+  lights_count:
+    friendly_name: "Number of Lights"
+    value_template: >
+      {% set dump = states('sensor.date') %}
+      {%- set domains = ['light'] -%}
+      {%- for domain in domains -%}
+        {%- for item in states[domain] -%}
+          {% if loop.first %}
+            {{loop.length}}
+          {% endif %}
+        {%- endfor -%}
+      {%- endfor -%}
+
+  tracker_count:
+    friendly_name: "Number of Devices"
+    value_template: >
+      {% set dump = states('sensor.date') %}
+      {%- set domains = ['device_tracker'] -%}
+      {%- for domain in domains -%}
+        {%- for item in states[domain] -%}
+          {% if loop.first %}
+            {{loop.length}}
+          {% endif %}
+        {%- endfor -%}
+      {%- endfor -%}
+
+  media_player_count:
+    friendly_name: "Number of Media Players"
+    value_template: >
+      {% set dump = states('sensor.date') %}
+      {%- set domains = ['media_player'] -%}
+      {%- for domain in domains -%}
+        {%- for item in states[domain] -%}
+          {% if loop.first %}
+            {{loop.length}}
+          {% endif %}
+        {%- endfor -%}
+      {%- endfor -%}
+
+  input_datetime_count:
+    friendly_name: "Number of Input DateTime"
+    value_template: >
+      {% set dump = states('sensor.date') %}
+      {%- set domains = ['input_datetime'] -%}
+      {%- for domain in domains -%}
+        {%- for item in states[domain] -%}
+          {% if loop.first %}
+            {{loop.length}}
+          {% endif %}
+        {%- endfor -%}
+      {%- endfor -%}
+
+  # ----- Count All Entities
+  total_entities:
+    friendly_name: "Entities"
+    icon_template: mdi:code-tags
+    value_template: "{{ states('sensor.date') and states | count }}"

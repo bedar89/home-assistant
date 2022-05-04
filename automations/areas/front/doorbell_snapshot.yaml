@@ -59,7 +59,4 @@
           interrupt: true
           file:
             path: "/config/www/images/snapshots/cam_voordeur.jpg"
-    - service: light.turn_on
-      data:
-        entity_id: light.led_light_strip
-        flash: short
+

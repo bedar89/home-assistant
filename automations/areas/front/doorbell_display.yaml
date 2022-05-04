@@ -1,6 +1,7 @@
 ---
 - alias: "Deurbel: Bericht op display"
   id: doorbell_display
+  initial_state: true
   trigger:
     - platform: state
       entity_id: binary_sensor.frontdoor_motion

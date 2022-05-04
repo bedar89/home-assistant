@@ -1,0 +1,19 @@
+---
+- id: afval_notificatie
+  alias: "Afval: notificatie"
+  trigger:
+    platform: state
+    entity_id: sensor.recycleapp_vandaag
+  condition:
+    - condition: template
+      value_template: "{{ states(trigger.entity_id) != 'unknown'}}"
+    - condition: template
+      value_template: "{{ (states(trigger.entity_id) | float) != 0}}"
+  action:
+    - service: notify.pushover
+      data:
+        title: "🚧 HACS update"
+        message: "There are {{ states('sensor.hacs') }} new update(s) available in HACS."
+        data:
+          url: "https://ha.bedar.be/hacs"
+          attachment: "https://cdn1.iconfinder.com/data/icons/basic-ui-elements-color/700/012_refresh-512.png"

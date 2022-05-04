@@ -1,0 +1,14 @@
+blueprint:
+  custom_cards:
+  - mushroom-person-card
+  description: replaces person card with mushroom person card by Bourner
+  name: Replace Mushroom Person Card
+  type: replace-card
+  version: '1.1'
+card:
+  entity: $replace_with_input_entity$
+  hide_name: false
+  hide_state: false
+  name: $replace_with_input_name$
+  type: custom:mushroom-person-card
+  use_entity_picture: true

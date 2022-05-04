@@ -1,0 +1,6 @@
+---
+#
+# List of binary sensors that is exposed to Google Assistant
+#
+# entities:
+- binary_sensor.basement_water_water_leak

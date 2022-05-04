@@ -190,3 +190,16 @@
       mobile_app_device: c3425e0f2e86498c190ee1b31299dcf4
       send_to_ha: true
       run_config_check: true
+- id: '1651499773372'
+  alias: Afval notificatie
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.recycleapp_morgen
+  condition: []
+  action:
+  - service: notify.pushover
+    data:
+      title: ♻️ Afval ophaling morgen!
+      message: Vergeet de vuilzakken niet buiten te zetten!
+  mode: single

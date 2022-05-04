@@ -1,0 +1,80 @@
+blueprint:
+  custom_cards:
+    - vertical-stack-in-card
+    - mushroom-template-card
+    - card-templater
+    - bar-card
+    - button-card
+  description: Single entity printer By PCPAI
+  input:
+    entity:
+      description: choose printer entity state
+      name: Printer entity
+      type: entity-picker
+    10_Cartridge_1_name:
+      description: Name of the first Cartridge
+      name: Name first Cartridge
+      type: text-field
+    11_Cartridge_1_color:
+      description: Color of the first Cartridge ---- IN ENGLISH ----
+      name: Color first Cartridge
+      type: text-field
+    12_Cartridge_1_entity:
+      description: Entity of the first Cartridge
+      name: Entity first Cartridge
+      type: entity-picker
+    20_Cartridge_2_name:
+      description: Name of the second Cartridge
+      name: Name second Cartridge
+      type: text-field
+    21_Cartridge_2_color:
+      description: Color of the second Cartridge ---- IN ENGLISH ----
+      name: Color second Cartridge
+      type: text-field
+    22_Cartridge_2_entity:
+      description: Entity of the second Cartridge
+      name: Entity second Cartridge
+      type: entity-picker
+  name: Printer auto card english v2
+  type: card
+  version: "1.1.0"
+card:
+  type: custom:vertical-stack-in-card
+  cards:
+    - type: custom:mushroom-template-card
+      icon: >-
+        {{iif(is_state('$entity$', 'idle'),
+        'mdi:printer',iif(is_state('$entity$', 'printing'),
+        'mdi:printer-eye','mdi:printer-alert', 'mdi:printer-off'),
+        'mdi:printer-off')}}
+      multiline_secondary: false
+      icon_color: >-
+        {{iif(is_state('$entity$', 'idle'),
+        'green',iif(is_state('$entity$', 'printing'),
+        'yellow','red', ''), '')}}
+      entity: $entity$
+      secondary: "{{states('$entity$')}}"
+      primary: "{{state_attr('$entity$','friendly_name')}}"
+    - type: custom:card-templater
+      card:
+        type: custom:bar-card
+        entities_template: >-
+          {% for sensor in states.sensor %}{% if sensor.entity_id is
+          search('$12_Cartridge_1_entity$',true)%}{% if
+          state_attr(sensor.entity_id, 'marker_type')%}{{'- entity: ' ~
+          sensor.entity_id ~ '\n  color: ' ~ sensor.entity_id|
+          regex_replace('$12_Cartridge_1_entity$','',true)|
+          regex_replace('ink','',true)| regex_replace('photo','',true)|
+          regex_replace('bk','',true)|regex_replace('_', '',true) ~ '\n'}}{% if
+          sensor.entity_id is search('photo',true) %}{{'  icon: mdi:camera\n 
+          positions:\n    icon: inside\n'}}{% endif %}{% if
+          state_attr(sensor.entity_id, 'marker_low_level') %}{{'  target: ' ~
+          state_attr(sensor.entity_id, 'marker_low_level') ~ '\n'}}{% endif %}{%
+          endif %}{% endif %}{% endfor%}
+        direction: up
+        height: 200px
+        stack: horizontal
+        positions:
+          name: "off"
+          icon: "off"
+          indicator: "off"

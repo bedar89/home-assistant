@@ -13,6 +13,11 @@ cloud:
 
     # Filters for entities to include/exclude from Google Assistant.
     # These are loaded from a separate directory.
+    filter:
+      include_entities: !include_dir_merge_list ../assistants/google
+
+    # Filters for entities to include/exclude from Google Assistant.
+    # These are loaded from a separate directory.
     # filter:
     #   include_entities:
     #     - script.start_sleep

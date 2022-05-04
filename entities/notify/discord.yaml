@@ -1,4 +1,0 @@
----
-platform: discord
-name: Discord
-token: !secret discord_token

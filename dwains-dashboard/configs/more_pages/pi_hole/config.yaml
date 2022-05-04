@@ -1,0 +1,4 @@
+icon: mdi:pi-hole
+name: Pi-Hole
+show_in_navbar: false
+sort_order: 6

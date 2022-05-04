@@ -1,0 +1,13 @@
+---
+# Enables a custom component called "versions".
+# It is a sensor that fetches the version number of current Home Assistant releases.
+#
+# https://www.home-assistant.io/integrations/version/
+#
+
+# Supervisor version dev
+platform: rest
+resource: https://version.home-assistant.io/dev.json
+name: Supervisor version - dev
+value_template: "{{ value_json.supervisor }}"
+scan_interval: 3600

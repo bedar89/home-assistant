@@ -1,0 +1,5 @@
+---
+platform: plex_recently_added
+token: !secret plex_api
+host: !secret media_host
+port: 32400

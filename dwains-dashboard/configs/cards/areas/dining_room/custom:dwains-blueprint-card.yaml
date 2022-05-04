@@ -1,0 +1,49 @@
+blueprint: printer_auto_card_english_EDIT.yaml
+card:
+  cards:
+  - entity: $entity$
+    icon: '{{iif(is_state(''$entity$'', ''idle''), ''mdi:printer'',iif(is_state(''$entity$'',
+      ''printing''), ''mdi:printer-eye'',''mdi:printer-alert'', ''mdi:printer-off''),
+      ''mdi:printer-off'')}}'
+    icon_color: '{{iif(is_state(''$entity$'', ''idle''), ''green'',iif(is_state(''$entity$'',
+      ''printing''), ''yellow'',''red'', ''''), '''')}}'
+    multiline_secondary: false
+    primary: '{{state_attr(''$entity$'',''friendly_name'')}}'
+    secondary: '{{states(''$entity$'')}}'
+    type: custom:mushroom-template-card
+  - card:
+      direction: up
+      entities_template: '{% for sensor in states.sensor %}{% if sensor.entity_id
+        is search(''$12_Cartridge_1_entity$'',true)%}{% if state_attr(sensor.entity_id,
+        ''marker_type'')%}{{''- entity: '' ~ sensor.entity_id ~ ''\n  color: '' ~
+        sensor.entity_id| regex_replace(''$12_Cartridge_1_entity$'','''',true)| regex_replace(''ink'','''',true)|
+        regex_replace(''photo'','''',true)| regex_replace(''bk'','''',true)|regex_replace(''_'',
+        '''',true) ~ ''\n''}}{% if sensor.entity_id is search(''photo'',true) %}{{''  icon:
+        mdi:camera\n  positions:\n    icon: inside\n''}}{% endif %}{% if state_attr(sensor.entity_id,
+        ''marker_low_level'') %}{{''  target: '' ~ state_attr(sensor.entity_id, ''marker_low_level'')
+        ~ ''\n''}}{% endif %}{% endif %}{% endif %}{% endfor%}'
+      height: 200px
+      positions:
+        icon: 'off'
+        indicator: 'off'
+        name: 'off'
+      stack: horizontal
+      type: custom:bar-card
+    type: custom:card-templater
+  type: custom:vertical-stack-in-card
+col_span: '1'
+col_span_lg: '1'
+col_span_xl: '1'
+data:
+  10_Cartridge_1_name: Black
+  11_Cartridge_1_color: Black
+  12_Cartridge_1_entity: sensor.canon_mg3600_series_black
+  20_Cartridge_2_name: Color
+  21_Cartridge_2_color: Green
+  22_Cartridge_2_entity: sensor.canon_mg3600_series_color
+  entity: sensor.canon_mg3600_series
+position: top
+row_span: '1'
+row_span_lg: '1'
+row_span_xl: '1'
+type: custom:dwains-blueprint-card

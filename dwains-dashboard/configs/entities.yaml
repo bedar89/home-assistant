@@ -1,0 +1,274 @@
+alarm_control_panel.alarmo:
+  col_span: '2'
+  col_span_lg: '2'
+  col_span_xl: '2'
+  custom_card: true
+  custom_popup: false
+  disabled: false
+  friendly_name: ''
+  hidden: false
+  row_span: '1'
+  row_span_lg: '1'
+  row_span_xl: '1'
+binary_sensor.basement_water_battery_low:
+  hidden: true
+binary_sensor.basement_water_water_leak:
+  custom_card: true
+binary_sensor.bathroom_motion_occupancy:
+  custom_card: true
+binary_sensor.front_door_contact:
+  custom_card: true
+binary_sensor.frontdoor_doorbell:
+  custom_card: true
+binary_sensor.frontdoor_motion:
+  custom_card: true
+binary_sensor.hallway_l1_motion_occupancy:
+  custom_card: true
+binary_sensor.hallway_motion_illuminance_above_threshold:
+  hidden: true
+binary_sensor.hallway_motion_occupancy:
+  custom_card: true
+binary_sensor.kitchen_door_contact:
+  custom_card: true
+binary_sensor.livingroom_door_contact:
+  custom_card: true
+binary_sensor.tjardo_bedroom_camera_motion:
+  custom_card: true
+  hidden: true
+  sort_order: 8
+camera.bedroom_camera_hd:
+  hidden: true
+camera.bedroom_camera_sd:
+  col_span: '2'
+  col_span_lg: '2'
+  col_span_xl: '2'
+  custom_card: true
+  custom_popup: false
+  disabled: false
+  friendly_name: ''
+  hidden: false
+  row_span: '1'
+  row_span_lg: '1'
+  row_span_xl: '1'
+  sort_order: 6
+camera.frontdoor_medium:
+  col_span: '2'
+  col_span_lg: '2'
+  col_span_xl: '2'
+  custom_card: true
+  custom_popup: false
+  disabled: false
+  friendly_name: ''
+  hidden: false
+  row_span: '1'
+  row_span_lg: '1'
+  row_span_xl: '1'
+  sort_order: 1
+camera.mufasa_cam:
+  col_span: '2'
+  col_span_lg: '2'
+  col_span_xl: '2'
+  custom_card: true
+  custom_popup: false
+  disabled: false
+  friendly_name: ''
+  hidden: false
+  row_span: '1'
+  row_span_lg: '1'
+  row_span_xl: '1'
+  sort_order: 3
+camera.nest_cam:
+  col_span: '2'
+  col_span_lg: '2'
+  col_span_xl: '2'
+  custom_card: true
+  custom_popup: false
+  disabled: false
+  friendly_name: ''
+  hidden: false
+  row_span: '1'
+  row_span_lg: '1'
+  row_span_xl: '1'
+  sort_order: 4
+camera.nest_iq_cam:
+  col_span: '2'
+  col_span_lg: '2'
+  col_span_xl: '2'
+  custom_card: true
+  custom_popup: false
+  disabled: false
+  friendly_name: ''
+  hidden: false
+  row_span: '1'
+  row_span_lg: '1'
+  row_span_xl: '1'
+  sort_order: 2
+camera.tjardo_bedroom_camera_hd:
+  hidden: true
+camera.tjardo_bedroom_camera_sd:
+  col_span: '2'
+  col_span_lg: '2'
+  col_span_xl: '2'
+  custom_card: true
+  custom_popup: false
+  disabled: false
+  friendly_name: ''
+  hidden: false
+  row_span: '1'
+  row_span_lg: '1'
+  row_span_xl: '1'
+  sort_order: 5
+device_tracker.broadlink_rm4c_pro:
+  hidden: true
+device_tracker.frontdoor:
+  hidden: true
+device_tracker.tjardo_cam:
+  hidden: true
+  sort_order: 8
+device_tracker.tp_link_tapo_c200:
+  hidden: true
+  sort_order: 7
+light.all_lights:
+  favorite: true
+light.bathroom_lights:
+  custom_card: true
+light.bedroom_lights:
+  custom_card: true
+light.dining_lights:
+  custom_card: true
+light.hallway_lights:
+  custom_card: true
+light.kitchen_lights:
+  custom_card: true
+light.led_light_strip:
+  custom_card: true
+light.living_room_lamp:
+  custom_card: true
+light.livingroom_lights:
+  custom_card: true
+light.tjardo_slaapkamer:
+  custom_card: true
+media_player.backyard_speaker:
+  custom_card: true
+media_player.bathroom_speaker:
+  custom_card: true
+media_player.bedroom_display:
+  custom_card: true
+media_player.kitchen_speaker:
+  custom_card: true
+media_player.kitchen_speakers:
+  custom_card: true
+media_player.livingroom_speaker:
+  custom_card: true
+media_player.master_bedroom_tv:
+  custom_card: true
+media_player.shield:
+  custom_card: true
+media_player.telenettvbox:
+  custom_card: true
+media_player.tv:
+  custom_card: true
+remote.broadlink_remote:
+  hidden: true
+remote.harmony_hub:
+  hidden: true
+select.frontdoor_doorbell_text:
+  hidden: true
+select.harmony_hub_activities:
+  hidden: true
+sensor.basement_water_battery:
+  hidden: true
+sensor.basement_water_temperature:
+  custom_card: true
+sensor.bathroom_motion_battery:
+  hidden: true
+sensor.bathroom_motion_temperature:
+  hidden: true
+sensor.bathroom_multisensor_battery:
+  hidden: true
+sensor.bedroom_control_action:
+  hidden: true
+sensor.bedroom_control_battery:
+  hidden: true
+sensor.bedroom_control_click:
+  hidden: true
+sensor.bedroom_multisensor_battery:
+  hidden: true
+sensor.computer_control_action:
+  hidden: true
+sensor.computer_control_battery:
+  hidden: true
+sensor.computer_control_click:
+  hidden: true
+sensor.dining_control_action:
+  hidden: true
+sensor.dining_control_battery:
+  hidden: true
+sensor.front_door_battery:
+  hidden: true
+sensor.front_door_temperature:
+  custom_card: true
+sensor.frontdoor_detected_object:
+  hidden: true
+sensor.hallway_control_action:
+  hidden: true
+sensor.hallway_control_battery:
+  hidden: true
+sensor.hallway_l1_motion_battery:
+  hidden: true
+sensor.hallway_l1_motion_illuminance_lux:
+  custom_card: true
+sensor.hallway_l1_motion_temperature:
+  custom_card: true
+sensor.hallway_motion_battery:
+  hidden: true
+sensor.kitchen_control_action:
+  hidden: true
+sensor.kitchen_control_battery:
+  hidden: true
+sensor.kitchen_door_battery:
+  hidden: true
+sensor.kitchen_door_temperature:
+  custom_card: true
+sensor.livingroom_control_action:
+  hidden: true
+sensor.livingroom_control_battery:
+  hidden: true
+sensor.livingroom_door_battery:
+  hidden: true
+sensor.livingroom_door_temperature:
+  hidden: true
+sensor.livingroom_multisensor_battery:
+  hidden: true
+sensor.power_highest_peak_time_today:
+  hidden: true
+sensor.power_highest_peak_time_tomorrow:
+  hidden: true
+sensor.washing_machine_deltaenergy:
+  hidden: true
+sensor.washing_machine_energy:
+  hidden: true
+sensor.washing_machine_energy_meter:
+  hidden: true
+sensor.washing_machine_energysaved:
+  hidden: true
+sensor.washing_machine_power:
+  hidden: true
+sensor.washing_machine_power_meter:
+  hidden: true
+sensor.washing_machine_powerenergy:
+  hidden: true
+sensor.washing_machine_washer_completion_time:
+  hidden: true
+sensor.washing_machine_washer_job_state:
+  hidden: true
+sensor.washing_machine_washer_machine_state:
+  custom_card: true
+switch.frontdoor_detections_person:
+  hidden: true
+switch.frontdoor_detections_vehicle:
+  hidden: true
+switch.tv_switch:
+  custom_card: true
+switch.washing_machine:
+  custom_card: true

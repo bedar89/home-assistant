@@ -2,6 +2,6 @@
 platform: template
 sensors:
   count_lights:
-    friendly_name: 'Lights'
+    friendly_name: 'Lights count'
     icon_template: mdi:lamps
     value_template: "{{ states.light | count }}"

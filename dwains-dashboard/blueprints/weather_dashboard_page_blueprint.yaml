@@ -1,0 +1,755 @@
+blueprint:
+  custom_cards:
+  - button-card
+  - weather-card
+  - mini-graph-card
+  - fold-entity-row
+  - multiple-entity-row
+  - state-switch
+  - stack-in-card
+  - entity-attributes-card
+  description: An weather dashboard page by Robert Wilson based on orginial page by
+    Leon van der Linden - Edited by Bedar
+  input:
+    Barometric_Pressure:
+      description: translate barometric Pressure
+      name: Translate Barometric Pressure
+      type: text-field
+    Feels_Like:
+      description: Translate feels like temperature
+      name: Translate Feels Like temperature
+      type: text-field
+    Forecast:
+      description: Translate weather Forecast
+      name: Translate Weather Forecast
+      type: text-field
+    Humditiy:
+      description: translate humidity
+      name: Translate humidity
+      type: text-field
+    Last_24_Hours:
+      description: Translate the phrase last 24 hours
+      name: Translate the phrase Last 24 hours
+      type: text-field
+    Learn_More:
+      description: Translate learn more
+      name: Translate Learn Learn_More
+      type: text-field
+    Radar:
+      description: Translate Radar
+      name: Translate Radar
+      type: text-field
+    Rain:
+      description: Translate Precipitation
+      name: Translate Rain/Precipitation
+      type: text-field
+    Stats:
+      description: Translate statistics
+      name: Translate Statistics
+      type: text-field
+    Temp:
+      description: translate temperature
+      name: Translate temperature
+      type: text-field
+    Wind:
+      description: Translate Wind
+      name: Translate Wind
+      type: text-field
+    Wind_direction:
+      name: Translate Wind Direction/Bearing
+      type: text-field
+    Wind_speed:
+      description: Translate Wind Speed
+      name: Translate Wind Speed
+      type: text-field
+    forecast_rain:
+      description: Forecast for Precipitation
+      name: Forecast Precipitation Sensor
+      type: entity-picker
+    forecast_rain_chance:
+      description: Forecast for Precipitation Percentage
+      name: Forecast Precipitation Percentage
+      type: entity-picker
+    lat_home:
+      description: This is the latitude for your home
+      name: Latitude for your home
+      type: text-field
+    long_home:
+      description: This is the longitude for your home
+      name: Longitude for your home
+      type: text-field
+    rain_last_24_hours:
+      description: Sensor for rain totals last 24 hours
+      name: Rain Last 24 Hours
+      type: entity-picker
+    rain_last_hour:
+      description: Sensor for rain total last hour
+      name: Rain Last Hour
+      type: entity-picker
+    weather_entity:
+      description: This is the weather entity (e.g weather.openweathermap )
+      name: Weather entity
+      type: entity-picker
+    weather_entity_feels_like:
+      description: This is the feels like temperature from the weather entity (e.g.
+        sensor.openweathermap_feels_like_temperature )
+      name: Feels Like
+      type: entity-picker
+    weather_entity_humidity:
+      description: This is the humidity from the weather entity (e.g. sensor.openweathermap_humidity
+        )
+      name: Humidity
+      type: entity-picker
+    weather_entity_pressure:
+      description: This is the pressure from the weather entity (e.g. sensor.openweathermap_pressure)
+      name: Barometric pressure
+      type: entity-picker
+    weather_entity_temperature:
+      description: This is the temperature from the weather entity (e.g.  sensor.openweathermap_temperature
+        )
+      name: temperature
+      type: entity-picker
+    wind_bearing:
+      description: Wind direction sensor (e.g. sensor.openweathermap_wind_bearing
+        )
+      name: Wind Direction
+      type: entity-picker
+    wind_speed:
+      description: Wind speed sensor (e.g. sensor.openweathermap_wind_speed )
+      name: Wind Speed
+      type: entity-picker
+  name: Weather dashboard page Blueprint
+  type: page
+  version: '2.0'
+card:
+  cards:
+  - cards:
+    - default: forecast
+      entity: hash
+      states:
+        forecast:
+          cards:
+          - cards:
+            - cards:
+              - name: $Forecast$
+                styles:
+                  name:
+                  - color: var(--dwains-theme-accent)
+                tap_action:
+                  action: navigate
+                  navigation_path: '#forecast'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Rain$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#neerslag'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Temp$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#temperatuur'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Stats$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#stats'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              type: horizontal-stack
+            padding: true
+            type: custom:dwains-flexbox-card
+          - cards:
+            - current: true
+              details: true
+              entity: $weather_entity$
+              forecast: true
+              hourly_forecast: false
+              number_of_forecasts: '5'
+              style: "ha-card {\n  border-radius: 10px;\n  padding-bottom: 10px;\n\
+                \  background-color: var(--dwains-theme-primary)\n}\n:host {\n  --paper-item-icon-color:\
+                \ var(--dwains-theme-accent) !important;\n}\n.card-header {\n  padding:\
+                \ 5px 16px;\n  font-size: 15px;\n  font-weight: 700 !important;\n\
+                }\n#states {\n  padding-top: 0px !important;\n  padding-bottom: 0px\
+                \ !important;\n}\n.secondary {\n  color: darkgray !important;\n  margin-left:\
+                \ 2px !important;\n}\n"
+              type: custom:weather-card
+            - entities:
+              - entity: $weather_entity_feels_like$
+                name: $Feels_Like$
+              - entity: $wind_speed$
+                name: $Wind_speed$
+              - entity: $weather_entity_humidity$
+                name: $Humditiy$
+              - entity: $weather_entity_pressure$
+                name: $Barometric_Pressure$
+              - entity: $wind_bearing$
+                icon: mdi:compass
+                name: $Wind_direction$
+              style: "ha-card {\n  border-radius: 10px;\n  padding-bottom: 10px;\n\
+                \  background-color: var(--dwains-theme-primary)\n}\n:host {\n  --paper-item-icon-color:\
+                \ var(--dwains-theme-accent) !important;\n}\n.card-header {\n  padding:\
+                \ 5px 16px;\n  font-size: 15px;\n  font-weight: 700 !important;\n\
+                }\n#states {\n  padding-top: 0px !important;\n  padding-bottom: 0px\
+                \ !important;\n}\n.secondary {\n  color: darkgray !important;\n  margin-left:\
+                \ 2px !important;\n}\n"
+              title: $Stats$
+              type: entities
+            - style: "ha-card {\n  border-radius: 10px;\n  padding-bottom: 10px;\n\
+                \  background-color: var(--dwains-theme-primary)\n}\n:host {\n  --paper-item-icon-color:\
+                \ var(--dwains-theme-accent) !important;\n}\n.card-header {\n  padding:\
+                \ 5px 16px;\n  font-size: 15px;\n  font-weight: 700 !important;\n\
+                }\n#states {\n  padding-top: 0px !important;\n  padding-bottom: 0px\
+                \ !important;\n}\n.secondary {\n  color: darkgray !important;\n  margin-left:\
+                \ 2px !important;\n}\n"
+              type: custom:ha-card-weather-conditions
+              uv:
+                max_uv_index: sensor.max_uv_index
+                ozone_level: sensor.current_ozone_level
+                protection_window: binary_sensor.protection_window
+                set_skin_type_1: sensor.skin_type_1_safe_exposure_time
+                set_skin_type_2: sensor.skin_type_2_safe_exposure_time
+                set_skin_type_3: sensor.skin_type_3_safe_exposure_time
+                set_skin_type_4: sensor.skin_type_4_safe_exposure_time
+                set_skin_type_5: sensor.skin_type_5_safe_exposure_time
+                set_skin_type_6: sensor.skin_type_6_safe_exposure_time
+                uv_index: sensor.current_uv_index
+                uv_level: sensor.current_uv_level
+            type: vertical-stack
+          type: vertical-stack
+        neerslag:
+          cards:
+          - cards:
+            - cards:
+              - name: $Forecast$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#forecast'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Rain$
+                styles:
+                  name:
+                  - color: var(--dwains-theme-accent)
+                tap_action:
+                  action: navigate
+                  navigation_path: '#neerslag'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Temp$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#temperatuur'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Stats$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#stats'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              type: horizontal-stack
+            padding: true
+            type: custom:dwains-flexbox-card
+          - cards:
+            - decimals: 0
+              entities:
+              - $rain_last_24_hours$
+              hour24: true
+              hours_to_show: 12
+              icon: ios:cloud-rain
+              line_color: '#299ec2'
+              line_width: 1
+              points_per_hour: 2
+              show:
+                animate: true
+                average: true
+                extrema: true
+                fill: true
+                graph: bar
+                icon: true
+                labels: false
+                legend: false
+                name: true
+              style: "ha-card {\n  border-radius: 10px;\n  padding-bottom: 10px;\n\
+                \  background-color: var(--dwains-theme-primary)\n}\n:host {\n  --paper-item-icon-color:\
+                \ var(--dwains-theme-accent) !important;\n}\n.card-header {\n  padding:\
+                \ 5px 16px;\n  font-size: 15px;\n  font-weight: 700 !important;\n\
+                }\n#states {\n  padding-top: 0px !important;\n  padding-bottom: 0px\
+                \ !important;\n}\n.secondary {\n  color: darkgray !important;\n  margin-left:\
+                \ 2px !important;\n}\n"
+              title: $Last_24_Hours$
+              type: custom:mini-graph-card
+            - entities:
+              - entity: $forecast_rain_chance$
+                name: $Forecast$ $Rain$ %
+              - entity: $forecast_rain$
+                name: $Forecast$ $Rain$
+              style: "ha-card {\n  border-radius: 10px;\n  padding-bottom: 10px;\n\
+                \  background-color: var(--dwains-theme-primary)\n}\n:host {\n  --paper-item-icon-color:\
+                \ var(--dwains-theme-accent) !important;\n}\n.card-header {\n  padding:\
+                \ 5px 16px;\n  font-size: 15px;\n  font-weight: 700 !important;\n\
+                }\n#states {\n  padding-top: 0px !important;\n  padding-bottom: 0px\
+                \ !important;\n}\n.secondary {\n  color: darkgray !important;\n  margin-left:\
+                \ 2px !important;\n}\n"
+              title: $Forecast$ $Rain$
+              type: entities
+            type: vertical-stack
+          type: vertical-stack
+        stats:
+          cards:
+          - cards:
+            - cards:
+              - name: $Forecast$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#forecast'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Rain$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#neerslag'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Temp$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#temperatuur'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Stats$
+                styles:
+                  name:
+                  - color: var(--dwains-theme-accent)
+                tap_action:
+                  action: navigate
+                  navigation_path: '#stats'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              type: horizontal-stack
+            padding: true
+            type: custom:dwains-flexbox-card
+          - cards:
+            - entities:
+              - entity: sensor.season
+              - entity: sensor.moon
+              - entity: sun.sun
+              - entity: $weather_entity_humidity$
+                name: $Humidity$
+              - entity: $weather_entity_pressure$
+                name: $Barometric_Pressure$
+              - entities:
+                - entity: $wind_speed$
+                  name: $Wind_speed$
+                - entity: $wind_bearing$
+                  icon: mdi:compass
+                  name: $Wind_direction$
+                head:
+                  label: $Learn_More$
+                  type: section
+                type: custom:fold-entity-row
+              style: "ha-card {\n  border-radius: 10px;\n  padding-bottom: 10px;\n\
+                \  background-color: var(--dwains-theme-primary)\n}\n:host {\n  --paper-item-icon-color:\
+                \ var(--dwains-theme-accent) !important;\n}\n.card-header {\n  padding:\
+                \ 5px 16px;\n  font-size: 15px;\n  font-weight: 700 !important;\n\
+                }\n#states {\n  padding-top: 0px !important;\n  padding-bottom: 0px\
+                \ !important;\n}\n.secondary {\n  color: darkgray !important;\n  margin-left:\
+                \ 2px !important;\n}\n"
+              title: $Stats$
+              type: entities
+            type: vertical-stack
+          type: vertical-stack
+        temperatuur:
+          cards:
+          - cards:
+            - cards:
+              - name: $Forecast$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#forecast'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Rain$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#neerslag'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Temp$
+                styles:
+                  name:
+                  - color: var(--dwains-theme-accent)
+                tap_action:
+                  action: navigate
+                  navigation_path: '#temperatuur'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Stats$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#stats'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              type: horizontal-stack
+            padding: true
+            type: custom:dwains-flexbox-card
+          - cards:
+            - decimals: 1
+              entities:
+              - $weather_entity_temperature$
+              font_size: 80
+              hour24: true
+              hours_to_show: 12
+              icon: ios:thermometer
+              line_color: '#299ec2'
+              line_width: 2
+              points_per_hour: 2
+              show:
+                animate: true
+                average: true
+                extrema: true
+                fill: true
+                graph: line
+                icon: true
+                labels: true
+                legend: true
+                name: true
+              style: "ha-card {\n  border-radius: 10px;\n  padding-bottom: 10px;\n\
+                \  background-color: var(--dwains-theme-primary)\n}\n:host {\n  --paper-item-icon-color:\
+                \ var(--dwains-theme-accent) !important;\n}\n.card-header {\n  padding:\
+                \ 5px 16px;\n  font-size: 15px;\n  font-weight: 700 !important;\n\
+                }\n#states {\n  padding-top: 0px !important;\n  padding-bottom: 0px\
+                \ !important;\n}\n.secondary {\n  color: darkgray !important;\n  margin-left:\
+                \ 2px !important;\n}\n"
+              title: $Temp$
+              type: custom:mini-graph-card
+            - decimals: 1
+              entities:
+              - $weather_entity_feels_like$
+              font_size: 80
+              hour24: true
+              hours_to_show: 12
+              icon: ios:thermometer
+              line_color: '#299ec2'
+              line_width: 2
+              points_per_hour: 2
+              show:
+                animate: true
+                average: true
+                extrema: true
+                fill: true
+                graph: line
+                icon: true
+                labels: true
+                legend: true
+                name: true
+              style: "ha-card {\n  border-radius: 10px;\n  padding-bottom: 10px;\n\
+                \  background-color: var(--dwains-theme-primary)\n}\n:host {\n  --paper-item-icon-color:\
+                \ var(--dwains-theme-accent) !important;\n}\n.card-header {\n  padding:\
+                \ 5px 16px;\n  font-size: 15px;\n  font-weight: 700 !important;\n\
+                }\n#states {\n  padding-top: 0px !important;\n  padding-bottom: 0px\
+                \ !important;\n}\n.secondary {\n  color: darkgray !important;\n  margin-left:\
+                \ 2px !important;\n}\n"
+              title: $Feels_Like$
+              type: custom:mini-graph-card
+            - style: "ha-card {\n  border-radius: 10px;\n  padding-bottom: 10px;\n\
+                \  background-color: var(--dwains-theme-primary)\n}\n:host {\n  --paper-item-icon-color:\
+                \ var(--dwains-theme-accent) !important;\n}\n.card-header {\n  padding:\
+                \ 5px 16px;\n  font-size: 15px;\n  font-weight: 700 !important;\n\
+                }\n#states {\n  padding-top: 0px !important;\n  padding-bottom: 0px\
+                \ !important;\n}\n.secondary {\n  color: darkgray !important;\n  margin-left:\
+                \ 2px !important;\n}\n"
+              type: custom:ha-card-weather-conditions
+              uv:
+                max_uv_index: sensor.max_uv_index
+                ozone_level: sensor.current_ozone_level
+                protection_window: binary_sensor.protection_window
+                set_skin_type_1: sensor.skin_type_1_safe_exposure_time
+                set_skin_type_2: sensor.skin_type_2_safe_exposure_time
+                set_skin_type_3: sensor.skin_type_3_safe_exposure_time
+                set_skin_type_4: sensor.skin_type_4_safe_exposure_time
+                set_skin_type_5: sensor.skin_type_5_safe_exposure_time
+                set_skin_type_6: sensor.skin_type_6_safe_exposure_time
+                uv_index: sensor.current_uv_index
+                uv_level: sensor.current_uv_level
+            type: vertical-stack
+          type: vertical-stack
+      type: custom:state-switch
+    item_classes: col-xs-12 col-sm-4
+    type: vertical-stack
+  - cards:
+    - default: forecast
+      entity: hash
+      states:
+        forecast:
+          cards:
+          - cards:
+            - cards:
+              - name: $Radar$
+                styles:
+                  name:
+                  - color: var(--dwains-theme-accent)
+                tap_action:
+                  action: navigate
+                  navigation_path: '#forecast'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Rain$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#neerslag'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Temp$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#temperatuur'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Wind$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#wind'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - tap_action:
+                  action: navigate
+                  navigation_path: '#stats'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              type: horizontal-stack
+            padding: true
+            type: custom:dwains-flexbox-card
+          - aspect_ratio: 80%
+            name: Windy.com
+            show_state: false
+            style: "ha-card {\n  border-radius: 10px;\n  padding-bottom: 10px;\n \
+              \ background-color: var(--dwains-theme-primary)\n}\n  :host {\n    --paper-item-icon-color:\
+              \ var(--dwains-theme-accent) !important;\n}\n.card-header {\n  padding:\
+              \ 5px 16px;\n  font-size: 15px;\n  font-weight: 700 !important;\n}\n\
+              #states {\n  padding-top: 0px !important;\n  padding-bottom: 0px !important;\n\
+              }\n.secondary {\n  color: darkgray !important;\n  margin-left: 2px !important;\n\
+              }\n"
+            type: iframe
+            url: https://embed.windy.com/embed2.html?lat=$lat_home$&lon=$long_home$&detailLat=$lat_home$&detailLon=$long_home$&width=750&height=800&zoom=9&level=surface&overlay=radar&product=radar&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&radarRange=-1
+          type: vertical-stack
+        neerslag:
+          cards:
+          - cards:
+            - cards:
+              - name: $Radar$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#forecast'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Rain$
+                styles:
+                  name:
+                  - color: var(--dwains-theme-accent)
+                tap_action:
+                  action: navigate
+                  navigation_path: '#neerslag'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Temp$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#temperatuur'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Wind$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#wind'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - tap_action:
+                  action: navigate
+                  navigation_path: '#stats'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              type: horizontal-stack
+            padding: true
+            type: custom:dwains-flexbox-card
+          - aspect_ratio: 80%
+            name: Windy.com
+            show_name: false
+            show_state: false
+            style: "ha-card {\n  border-radius: 10px;\n  padding-bottom: 10px;\n \
+              \ background-color: var(--dwains-theme-primary)\n}\n  :host {\n    --paper-item-icon-color:\
+              \ var(--dwains-theme-accent) !important;\n}\n.card-header {\n  padding:\
+              \ 5px 16px;\n  font-size: 15px;\n  font-weight: 700 !important;\n}\n\
+              #states {\n  padding-top: 0px !important;\n  padding-bottom: 0px !important;\n\
+              }\n.secondary {\n  color: darkgray !important;\n  margin-left: 2px !important;\n\
+              }\n"
+            type: iframe
+            url: https://embed.windy.com/embed2.html?lat=$lat_home$&lon=$long_home$&detailLat=$lat_home$0&detailLon=$long_home$&width=750&height=800&zoom=9&level=surface&overlay=rain&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&radarRange=-1
+          type: vertical-stack
+        stats:
+          cards:
+          - cards:
+            - cards:
+              - name: $Radar$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#forecast'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Rain$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#neerslag'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Temp$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#temperatuur'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Wind$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#wind'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - styles:
+                  name:
+                  - color: var(--dwains-theme-accent)
+                tap_action:
+                  action: navigate
+                  navigation_path: '#stats'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              type: horizontal-stack
+            padding: true
+            type: custom:dwains-flexbox-card
+          - aspect_ratio: 80%
+            name: Windy.com
+            show_name: false
+            show_state: false
+            style: "ha-card {\n  border-radius: 10px;\n  padding-bottom: 10px;\n \
+              \ background-color: var(--dwains-theme-primary)\n}\n  :host {\n    --paper-item-icon-color:\
+              \ var(--dwains-theme-accent) !important;\n}\n.card-header {\n  padding:\
+              \ 5px 16px;\n  font-size: 15px;\n  font-weight: 700 !important;\n}\n\
+              #states {\n  padding-top: 0px !important;\n  padding-bottom: 0px !important;\n\
+              }\n.secondary {\n  color: darkgray !important;\n  margin-left: 2px !important;\n\
+              }\n"
+            type: iframe
+            url: https://embed.windy.com/embed2.html?lat=$lat_home$&lon=$long_home$&detailLat=$lat_home$&detailLon=$long_home$&width=750&height=800&zoom=9&level=surface&overlay=pressure&product=ecmwf&menu=&message=true&marker=true&calendar=now&pressure=&type=map&location=coordinates&detail=&radarRange=-1
+          type: vertical-stack
+        temperatuur:
+          cards:
+          - cards:
+            - cards:
+              - name: $Radar$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#forecast'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Rain$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#neerslag'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Temp$
+                styles:
+                  name:
+                  - color: var(--dwains-theme-accent)
+                tap_action:
+                  action: navigate
+                  navigation_path: '#temperatuur'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Wind$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#wind'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - tap_action:
+                  action: navigate
+                  navigation_path: '#stats'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              type: horizontal-stack
+            padding: true
+            type: custom:dwains-flexbox-card
+          - aspect_ratio: 80%
+            name: Windy.com
+            show_name: false
+            show_state: false
+            style: "ha-card {\n  border-radius: 10px;\n  padding-bottom: 10px;\n \
+              \ background-color: var(--dwains-theme-primary)\n}\n  :host {\n    --paper-item-icon-color:\
+              \ var(--dwains-theme-accent) !important;\n}\n.card-header {\n  padding:\
+              \ 5px 16px;\n  font-size: 15px;\n  font-weight: 700 !important;\n}\n\
+              #states {\n  padding-top: 0px !important;\n  padding-bottom: 0px !important;\n\
+              }\n.secondary {\n  color: darkgray !important;\n  margin-left: 2px !important;\n\
+              }\n"
+            type: iframe
+            url: https://embed.windy.com/embed2.html?lat=$lat_home$&lon=$long_home$&detailLat=$lat_home$&detailLon=$long_home$&width=750&height=800&zoom=9&level=surface&overlay=temp&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&radarRange=-1
+          type: vertical-stack
+        wind:
+          cards:
+          - cards:
+            - cards:
+              - name: $Radar$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#forecast'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Rain$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#neerslag'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Temp$
+                tap_action:
+                  action: navigate
+                  navigation_path: '#temperatuur'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - name: $Wind$
+                styles:
+                  name:
+                  - color: var(--dwains-theme-accent)
+                tap_action:
+                  action: navigate
+                  navigation_path: '#wind'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              - tap_action:
+                  action: navigate
+                  navigation_path: '#stats'
+                template: weather_dashboard_blueprint_heading
+                type: custom:button-card
+              type: horizontal-stack
+            padding: true
+            type: custom:dwains-flexbox-card
+          - aspect_ratio: 80%
+            name: Windy.com
+            show_name: false
+            show_state: false
+            style: "ha-card {\n  border-radius: 10px;\n  padding-bottom: 10px;\n \
+              \ background-color: var(--dwains-theme-primary)\n}\n  :host {\n    --paper-item-icon-color:\
+              \ var(--dwains-theme-accent) !important;\n}\n.card-header {\n  padding:\
+              \ 5px 16px;\n  font-size: 15px;\n  font-weight: 700 !important;\n}\n\
+              #states {\n  padding-top: 0px !important;\n  padding-bottom: 0px !important;\n\
+              }\n.secondary {\n  color: darkgray !important;\n  margin-left: 2px !important;\n\
+              }\n"
+            type: iframe
+            url: https://embed.windy.com/embed2.html?lat=$lat_home$&lon=$long_home$&detailLat=$lat_home$&detailLon=$long_home$&width=750&height=800&zoom=9&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&radarRange=-1
+          type: vertical-stack
+      type: custom:state-switch
+    item_classes: col-xs-12 col-sm-8
+    type: vertical-stack
+  items_classes: col-xs-12
+  type: custom:dwains-flexbox-card

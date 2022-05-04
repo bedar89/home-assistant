@@ -1,0 +1,31 @@
+---
+alert:
+  cpu_high:
+    name: Gebruik CPU is hoog
+    entity_id: binary_sensor.cpu_high
+    state: "on"
+    repeat: 5 # minutes
+    can_acknowledge: true
+    skip_first: false
+    notifiers:
+      - mobile_app_bedar_phone
+
+  cpu_hot:
+    name: Temperatuur CPU is hoog
+    entity_id: binary_sensor.cpu_hot
+    state: "on"
+    repeat: 120 # minutes
+    can_acknowledge: true
+    skip_first: false
+    notifiers:
+      - mobile_app_bedar_phone
+
+  maintenance_mode_alert:
+    name: Onderhouds Mode staat al aan voor een lange tijd
+    done_message: Maintenance Mode de-activated
+    entity_id: input_boolean.maintenance_mode
+    repeat:
+      - 60
+    skip_first: true
+    notifiers:
+      - mobile_app_bedar_phone

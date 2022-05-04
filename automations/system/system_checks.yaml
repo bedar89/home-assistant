@@ -1,0 +1,15 @@
+---
+#
+- alias: "[System] - ON automations counter"
+  description: >-
+    Check how many automations are turned ON
+  id: b3d1a4a4-3f40-4279-95cb-3212d356c7cb
+  mode: single
+
+  trigger:
+    - platform: homeassistant
+      event: start
+    - platform: time_pattern
+      hours: "/1"
+  action:
+    - service: python_script.on_automations_counter

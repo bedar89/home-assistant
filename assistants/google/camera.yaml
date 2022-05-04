@@ -1,0 +1,9 @@
+---
+#
+# List of cameras that is exposed to Google Assistant
+#
+# entities:
+- camera.bedroom_camera_sd
+- camera.frontdoor_medium
+- camera.mufasa_cam
+- camera.tjardo_bedroom_camera_sd
