@@ -8,5 +8,7 @@ card:
   show_color_temp_control: true
   type: custom:mushroom-light-card
   use_light_color: true
+  collapsible_controls: true
+  fill_container: false
 input_entity: light.livingroom_lights
 type: custom:dwains-blueprint-card

@@ -20,6 +20,7 @@ from .kegtron import parse_kegtron
 from .kkm import parse_kkm
 from .laica import parse_laica
 from .miscale import parse_miscale
+from .mikrotik import parse_mikrotik
 from .moat import parse_moat
 from .oral_b import parse_oral_b
 from .qingping import parse_qingping
@@ -30,6 +31,7 @@ from .sensirion import parse_sensirion
 from .switchbot import parse_switchbot
 from .teltonika import parse_teltonika
 from .thermoplus import parse_thermoplus
+from .thermopro import parse_thermopro
 from .tilt import parse_tilt
 from .xiaomi import parse_xiaomi
 from .xiaogui import parse_xiaogui
@@ -215,6 +217,10 @@ class BleParser:
                         # Ruuvitag V3/V5
                         sensor_data = parse_ruuvitag(self, man_spec_data, mac, rssi)
                         break
+                    elif comp_id == 0x094F and data_len == 0x15:
+                        # Mikrotik
+                        sensor_data = parse_mikrotik(self, man_spec_data, mac, rssi)
+                        break
                     elif comp_id == 0x1000 and data_len == 0x15:
                         # Moat S2
                         sensor_data = parse_moat(self, man_spec_data, mac, rssi)
@@ -311,6 +317,10 @@ class BleParser:
                     elif complete_local_name in ["sps", "tps"] and data_len == 0x0A:
                         # Inkbird IBS-TH
                         sensor_data = parse_inkbird(self, man_spec_data, complete_local_name, mac, rssi)
+                        break
+                    elif complete_local_name[0:5] == "TP359" and data_len == 0x07:
+                        # Thermopro
+                        sensor_data = parse_thermopro(self, man_spec_data, complete_local_name[0:5], mac, rssi)
                         break
 
                     # Filter on other parts of the manufacturer specific data

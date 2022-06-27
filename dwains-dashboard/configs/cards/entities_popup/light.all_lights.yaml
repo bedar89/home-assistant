@@ -1,0 +1,21 @@
+card:
+  type: entities
+filter:
+  exclude:
+    - entity_id: light.all_lights
+  include:
+    - domain: light
+      name: "*lights"
+      options:
+        show_brightness_control: true
+        show_color_control: true
+        show_color_temp_control: true
+        type: custom:mushroom-light-card
+        use_light_color: true
+  collapsible_controls: true
+  fill_container: false
+sort:
+  method: state
+  numeric: false
+  reverse: true
+type: custom:auto-entities

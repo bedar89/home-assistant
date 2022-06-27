@@ -1,0 +1,108 @@
+blueprint:
+  custom_cards:
+  - mini-graph-card
+  - button-card
+  - mushroom-person-card
+  description: Person Pop-Up bleuprint by Michel Jourdain
+  input:
+    11_person_name:
+      description: Name of the person one
+      name: Name person one
+      type: text-field
+    12_person_entity:
+      description: Person one entity
+      name: Person one entity
+      type: entity-picker
+    13_tracker_entity:
+      description: Tracker entity of person one
+      name: Tracker entity person one
+      type: entity-picker
+    14_battery_charging_entity:
+      description: Battery charging entity of person one
+      name: Battery charging person one
+      type: entity-picker
+    15_battery_level_entity:
+      description: Battery level entity of person one
+      name: Battery level person one
+      type: entity-picker
+    50_translate_displacements_last_24_hours:
+      description: Translate displacements last 24 hours in your language
+      name: Translate displacements last 24 hours
+      type: text-field
+    51_translate_battery_charge_level:
+      description: Translate Battery charge level in your language
+      name: Translate Battery charge level
+      type: text-field
+    52_translate_battery_charging:
+      description: Translate Battery charging in your language
+      name: Translate Battery charging
+      type: text-field
+    53_translate_map:
+      description: Translate Map in your language
+      name: Translate Map
+      type: text-field
+    60_dark_mode:
+      default_value: false
+      description: Dark mode for map
+      name: Dark mode map
+      type: checkbox
+  name: PersonsPopUpBlueprint
+  type: card
+  version: '1.4'
+card:
+  cards:
+  - cards:
+    - entity: $12_person_entity$
+      hide_name: false
+      hide_state: false
+      icon: mdi:account-plus
+      name: $11_person_name$
+      type: custom:mushroom-person-card
+      use_entity_picture: true
+    - title: $50_translate_displacements_last_24_hours$
+      type: custom:dwains-heading-card
+    - entities:
+      - entity: $13_tracker_entity$
+      hours_to_show: 24
+      refresh_interval: 0
+      type: history-graph
+    - title: $52_translate_battery_charging$
+      type: custom:dwains-heading-card
+    - entities:
+      - entity: $14_battery_charging_entity$
+      hours_to_show: 24
+      refresh_interval: 0
+      type: history-graph
+    - title: $51_translate_battery_charge_level$
+      type: custom:dwains-heading-card
+    - decimals: 0
+      entities:
+      - entity: $15_battery_level_entity$
+      hour24: true
+      hours_to_show: 24
+      line_color: green
+      line_width: 2
+      points_per_hour: 2
+      show:
+        animate: true
+        average: false
+        extrema: false
+        fill: true
+        graph: bar
+        icon: false
+        labels: false
+        legend: false
+        name: false
+      type: custom:mini-graph-card
+    - title: $53_translate_map$
+      type: custom:dwains-heading-card
+    - aspect_ratio: 50%
+      dark_mode: $60_dark_mode$
+      default_zoom: 12
+      entities:
+      - entity: $13_tracker_entity$
+      hours_to_show: 24
+      type: map
+    type: vertical-stack
+  items_classes: col-xs-12
+  type: custom:dwains-flexbox-card

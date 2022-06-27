@@ -1,0 +1,71 @@
+blueprint: personspopupblueprint.yaml
+card:
+  cards:
+  - cards:
+    - entity: $12_person_entity$
+      hide_name: false
+      hide_state: false
+      icon: mdi:account-plus
+      name: $11_person_name$
+      type: custom:mushroom-person-card
+      use_entity_picture: true
+    - title: $50_translate_displacements_last_24_hours$
+      type: custom:dwains-heading-card
+    - entities:
+      - entity: $13_tracker_entity$
+      hours_to_show: 24
+      refresh_interval: 0
+      type: history-graph
+    - title: $52_translate_battery_charging$
+      type: custom:dwains-heading-card
+    - entities:
+      - entity: $14_battery_charging_entity$
+      hours_to_show: 24
+      refresh_interval: 0
+      type: history-graph
+    - title: $51_translate_battery_charge_level$
+      type: custom:dwains-heading-card
+    - decimals: 0
+      entities:
+      - entity: $15_battery_level_entity$
+      hour24: true
+      hours_to_show: 24
+      line_color: green
+      line_width: 2
+      points_per_hour: 2
+      show:
+        animate: true
+        average: false
+        extrema: false
+        fill: true
+        graph: bar
+        icon: false
+        labels: false
+        legend: false
+        name: false
+      type: custom:mini-graph-card
+    - title: $53_translate_map$
+      type: custom:dwains-heading-card
+    - aspect_ratio: 50%
+      dark_mode: $60_dark_mode$
+      default_zoom: 12
+      entities:
+      - entity: $13_tracker_entity$
+      hours_to_show: 24
+      type: map
+    type: vertical-stack
+  items_classes: col-xs-12
+  type: custom:dwains-flexbox-card
+data:
+  11_person_name: Sunshine
+  12_person_entity: person.sunshine
+  13_tracker_entity: device_tracker.sunshine_phone
+  14_battery_charging_entity: binary_sensor.sm_g770f_is_charging
+  15_battery_level_entity: sensor.sm_g770f_battery_level
+  50_translate_displacements_last_24_hours: Verplaatsingen laatste 24 uur
+  51_translate_battery_charge_level: Batterij niveau
+  52_translate_battery_charging: Batterij opladen
+  53_translate_map: Map
+  60_dark_mode: true
+input_entity: person.sunshine
+type: custom:dwains-blueprint-card

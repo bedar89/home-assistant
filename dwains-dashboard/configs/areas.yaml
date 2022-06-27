@@ -1,0 +1,95 @@
+basement:
+  disabled: false
+  floor: ''
+  icon: mdi:home-floor-b
+  sort_order: 8
+bathroom:
+  disabled: false
+  floor: ''
+  icon: mdi:bathtub
+  sort_order: 4
+bedroom:
+  disabled: false
+  floor: ''
+  icon: mdi:bed-king
+  sort_order: 14
+blue_room:
+  disabled: false
+  floor: ''
+  icon: mdi:printer-3d
+  sort_order: 16
+camera:
+  disabled: false
+  floor: ''
+  icon: mdi:cctv
+  sort_order: 2
+computer:
+  disabled: false
+  floor: ''
+  icon: mdi:laptop
+  sort_order: 17
+dining_room:
+  disabled: false
+  floor: ''
+  icon: mdi:table-chair
+  sort_order: 7
+front:
+  disabled: false
+  floor: ''
+  icon: mdi:door
+  sort_order: 5
+garage:
+  disabled: false
+  floor: ''
+  icon: mdi:garage
+  sort_order: 11
+garden:
+  disabled: false
+  floor: ''
+  icon: mdi:grass
+  sort_order: 10
+hallway:
+  disabled: false
+  floor: ''
+  icon: mdi:shoe-sneaker
+  sort_order: 6
+kitchen:
+  disabled: false
+  floor: ''
+  icon: mdi:fridge
+  sort_order: 3
+living_room:
+  disabled: false
+  floor: ''
+  icon: fas:couch
+  sort_order: 1
+roof:
+  disabled: false
+  floor: ''
+  icon: mdi:home-roof
+  sort_order: 12
+server_rack:
+  disabled: false
+  floor: ''
+  icon: mdi:server
+  sort_order: 13
+system:
+  disabled: false
+  floor: ''
+  icon: mdi:gauge
+  sort_order: 19
+tjardo_bedroom:
+  disabled: false
+  floor: ''
+  icon: mdi:teddy-bear
+  sort_order: 15
+washing_room:
+  disabled: false
+  floor: ''
+  icon: mdi:washing-machine
+  sort_order: 9
+white_room:
+  disabled: false
+  floor: ''
+  icon: mdi:bed-outline
+  sort_order: 18

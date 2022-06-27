@@ -1,0 +1,13 @@
+platform: fitbit
+clock_format: 24H
+monitored_resources:
+  - "body/weight"
+  - "activities/distance"
+  - "activities/heart"
+  - "activities/steps"
+  - "body/bmi"
+  - "body/fat"
+  - "body/weight"
+  - "devices/battery"
+  - "sleep/startTime"
+  - "sleep/timeInBed"

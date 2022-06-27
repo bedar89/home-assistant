@@ -8,4 +8,6 @@ homeassistant:
   # Lets me customize individual entities
   customize: !include_dir_named ../customizations/entities
   allowlist_external_dirs:
-    - /config
+    - /config/
+    - /root/config/
+    - /config/www/

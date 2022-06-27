@@ -1,0 +1,31 @@
+cards:
+- chips:
+  - entity: sensor.plex_galaxy
+    type: entity
+  - entity: sensor.galaxy_library_movies
+    type: entity
+  - entity: sensor.galaxy_library_tv_shows
+    type: entity
+  - entity: sensor.galaxy_library_youtube
+    type: entity
+  type: custom:mushroom-chips-card
+- clock: 24
+  date: ddmm
+  entity: sensor.plex_recently_added
+  image_style: fanart
+  max: 5
+  title: Plex
+  type: custom:upcoming-media-card
+- cards:
+  - clock: 24
+    date: ddmm
+    entity: sensor.sonarr_upcoming_media
+    title: Sonarr
+    type: custom:upcoming-media-card
+  - clock: 24
+    date: ddmm
+    entity: sensor.radarr_upcoming_media
+    title: Radarr
+    type: custom:upcoming-media-card
+  type: horizontal-stack
+type: vertical-stack

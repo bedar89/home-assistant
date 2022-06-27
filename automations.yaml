@@ -55,8 +55,8 @@
     path: EPMatt/ikea_e1743.yaml
     input:
       integration: Zigbee2MQTT
-      controller_device: 2f504c286c1a0e7f9a405d221eddcf03
-      controller_entity: sensor.bedroom_control_action
+      controller_device: 37c8cefceb3d7db53d09342c6955fc13
+      controller_entity: sensor.computer_control_action
       action_button_up_short:
       - type: turn_on
         device_id: e8031b8f59f42e4498080fcdad628dc5
@@ -191,15 +191,34 @@
       send_to_ha: true
       run_config_check: true
 - id: '1651499773372'
-  alias: Afval notificatie
+  alias: 'Notificatie: Afvalkalender'
   description: ''
   trigger:
   - platform: state
     entity_id: sensor.recycleapp_morgen
+    from: Geen
   condition: []
   action:
   - service: notify.pushover
     data:
-      title: ♻️ Afval ophaling morgen!
-      message: Vergeet de vuilzakken niet buiten te zetten!
+      title: ♻️ Ophaling {{states("sensor.recycleapp_morgen") }} morgen!
+      message: Vergeet de {{states("sensor.recycleapp_morgen") }} niet buiten te zetten!
   mode: single
+- id: '1651668799824'
+  alias: Control - Bathroom
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e1743.yaml
+    input:
+      integration: Zigbee2MQTT
+      controller_entity: sensor.bathroom_control_action
+      helper_last_controller_event: input_text.bathroom_control_last_event
+- id: '1651668882607'
+  alias: Hook - Bathroom lights
+  description: ''
+  use_blueprint:
+    path: EPMatt/light.yaml
+    input:
+      controller_entity: sensor.bathroom_control_action
+      controller_model: IKEA E1743 TRÅDFRI On/Off Switch & Dimmer
+      light: light.bathroom_lights

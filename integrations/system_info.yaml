@@ -86,6 +86,7 @@ sensor:
     resources:
       - type: memory_use_percent
       - type: processor_use
+      - type: processor_temperature
       - type: disk_use_percent
         arg: /
       - type: disk_free

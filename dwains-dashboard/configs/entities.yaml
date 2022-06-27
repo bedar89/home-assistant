@@ -14,28 +14,51 @@ binary_sensor.basement_water_battery_low:
   hidden: true
 binary_sensor.basement_water_water_leak:
   custom_card: true
+  favorite: true
 binary_sensor.bathroom_motion_occupancy:
   custom_card: true
+  sort_order: 8
 binary_sensor.front_door_contact:
+  col_span: '1'
+  col_span_lg: '1'
+  col_span_xl: '1'
   custom_card: true
+  custom_popup: false
+  disabled: false
+  excluded: false
+  friendly_name: ''
+  hidden: false
+  row_span: '1'
+  row_span_lg: '1'
+  row_span_xl: '1'
 binary_sensor.frontdoor_doorbell:
   custom_card: true
 binary_sensor.frontdoor_motion:
   custom_card: true
 binary_sensor.hallway_l1_motion_occupancy:
   custom_card: true
+  sort_order: 3
 binary_sensor.hallway_motion_illuminance_above_threshold:
   hidden: true
 binary_sensor.hallway_motion_occupancy:
   custom_card: true
+  sort_order: 2
 binary_sensor.kitchen_door_contact:
   custom_card: true
+  sort_order: 5
 binary_sensor.livingroom_door_contact:
   custom_card: true
+  sort_order: 10
 binary_sensor.tjardo_bedroom_camera_motion:
   custom_card: true
   hidden: true
   sort_order: 8
+button.bedarnas_reboot:
+  disabled: true
+button.bedarnas_shutdown:
+  disabled: true
+button.scan_clients_galaxy:
+  disabled: true
 camera.bedroom_camera_hd:
   hidden: true
 camera.bedroom_camera_sd:
@@ -129,45 +152,67 @@ device_tracker.tp_link_tapo_c200:
   hidden: true
   sort_order: 7
 light.all_lights:
+  custom_popup: true
   favorite: true
 light.bathroom_lights:
   custom_card: true
+  sort_order: 1
 light.bedroom_lights:
   custom_card: true
 light.dining_lights:
   custom_card: true
 light.hallway_lights:
   custom_card: true
+  sort_order: 1
 light.kitchen_lights:
   custom_card: true
+  sort_order: 1
 light.led_light_strip:
   custom_card: true
 light.living_room_lamp:
   custom_card: true
+  sort_order: 7
 light.livingroom_lights:
   custom_card: true
+  sort_order: 1
 light.tjardo_slaapkamer:
   custom_card: true
 media_player.backyard_speaker:
   custom_card: true
 media_player.bathroom_speaker:
   custom_card: true
+  sort_order: 2
 media_player.bedroom_display:
   custom_card: true
 media_player.kitchen_speaker:
   custom_card: true
+  sort_order: 2
 media_player.kitchen_speakers:
   custom_card: true
+  sort_order: 3
 media_player.livingroom_speaker:
   custom_card: true
+  sort_order: 5
 media_player.master_bedroom_tv:
   custom_card: true
 media_player.shield:
   custom_card: true
+  sort_order: 2
 media_player.telenettvbox:
   custom_card: true
+  sort_order: 3
 media_player.tv:
   custom_card: true
+  sort_order: 4
+person.bedar:
+  custom_card: true
+  custom_popup: true
+person.sunshine:
+  custom_card: true
+  custom_popup: true
+person.tjardo:
+  disabled: true
+  hidden: false
 remote.broadlink_remote:
   hidden: true
 remote.harmony_hub:
@@ -180,12 +225,29 @@ sensor.basement_water_battery:
   hidden: true
 sensor.basement_water_temperature:
   custom_card: true
+sensor.bathroom_control_action:
+  hidden: true
+  sort_order: 9
+sensor.bathroom_control_battery:
+  hidden: true
+  sort_order: 8
+sensor.bathroom_control_click:
+  hidden: true
+  sort_order: 10
 sensor.bathroom_motion_battery:
   hidden: true
+sensor.bathroom_motion_illuminance_lux:
+  sort_order: 3
 sensor.bathroom_motion_temperature:
   hidden: true
 sensor.bathroom_multisensor_battery:
   hidden: true
+sensor.bathroom_multisensor_humidity:
+  sort_order: 5
+sensor.bathroom_multisensor_pressure:
+  sort_order: 6
+sensor.bathroom_multisensor_temperature:
+  sort_order: 4
 sensor.bedroom_control_action:
   hidden: true
 sensor.bedroom_control_battery:
@@ -218,8 +280,10 @@ sensor.hallway_l1_motion_battery:
   hidden: true
 sensor.hallway_l1_motion_illuminance_lux:
   custom_card: true
+  sort_order: 5
 sensor.hallway_l1_motion_temperature:
   custom_card: true
+  sort_order: 4
 sensor.hallway_motion_battery:
   hidden: true
 sensor.kitchen_control_action:
@@ -230,6 +294,7 @@ sensor.kitchen_door_battery:
   hidden: true
 sensor.kitchen_door_temperature:
   custom_card: true
+  sort_order: 4
 sensor.livingroom_control_action:
   hidden: true
 sensor.livingroom_control_battery:
@@ -240,6 +305,12 @@ sensor.livingroom_door_temperature:
   hidden: true
 sensor.livingroom_multisensor_battery:
   hidden: true
+sensor.livingroom_multisensor_humidity:
+  sort_order: 7
+sensor.livingroom_multisensor_pressure:
+  sort_order: 8
+sensor.livingroom_multisensor_temperature:
+  sort_order: 6
 sensor.power_highest_peak_time_today:
   hidden: true
 sensor.power_highest_peak_time_tomorrow:
@@ -264,11 +335,18 @@ sensor.washing_machine_washer_job_state:
   hidden: true
 sensor.washing_machine_washer_machine_state:
   custom_card: true
+switch.3dprinter_switch:
+  custom_card: true
 switch.frontdoor_detections_person:
   hidden: true
 switch.frontdoor_detections_vehicle:
   hidden: true
+switch.pi_hole:
+  custom_card: true
 switch.tv_switch:
   custom_card: true
+  sort_order: 9
 switch.washing_machine:
+  custom_card: true
+weather.buienradar:
   custom_card: true
